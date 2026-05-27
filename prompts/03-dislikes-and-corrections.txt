@@ -1,0 +1,14 @@
+I'm setting up a new AI assistant and need you to export what you know about my preferences, pet peeves, and the times you've had to adjust your behavior for me.
+
+This one is really important — please be honest and specific.
+
+1. What are things I've explicitly told you NOT to do? (e.g., "stop using bullet points", "don't be so formal")
+2. What corrections have I made to your responses? (times I said something like "that's not right", "that's not my style", "too long", "wrong tone")
+3. What topics or types of content have I said I don't like or don't want?
+4. What frustrates me — about AI responses, about work, about people, about anything I've vented about?
+5. What writing style or tone do I NOT like? (e.g., too corporate, too casual, too long, too short)
+6. Have I ever said something like "I hate when..." or "never do this" — if so, what?
+7. Are there any words, phrases, or formats I've asked you to avoid?
+8. Is there anything about how I like to communicate that I've had to teach you over time?
+
+Format as a numbered list. Be specific — vague answers aren't helpful here. If you don't have information on something, say "not discussed."

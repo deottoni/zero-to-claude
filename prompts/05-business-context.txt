@@ -1,0 +1,16 @@
+I'm setting up a new AI assistant and need you to export what you know about my business and the people I work with.
+
+Based on our conversations, please answer:
+
+1. What is my business or what service/product do I offer? Describe it clearly.
+2. Who are my ideal clients or customers? (type of person, industry, size of business, demographics)
+3. How do I find or attract clients — what's my main way of getting new business?
+4. What does a typical client engagement or project look like for me? (how long, what's involved, how it ends)
+5. What do my clients usually come to me struggling with, and what do they get from working with me?
+6. Do I have any competitors or others in my space that I've mentioned?
+7. What prices, packages, or offers do I have, if I've mentioned them?
+8. What platforms or channels do I use to promote my work? (Instagram, LinkedIn, email list, website, etc.)
+9. Have I mentioned any clients, case studies, or success stories?
+10. Is there anything specific about my industry or niche that's important to understand?
+
+Format as a numbered list. Include real specifics from our conversations. Say "not discussed" if something wasn't covered.

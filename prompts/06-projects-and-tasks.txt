@@ -1,0 +1,26 @@
+I'm setting up a new AI assistant and need you to export what you know about the actual work I do — my recurring projects, tasks, and workflows.
+
+This is the most practical one, so please be as specific as possible.
+
+1. What are the main types of work I do regularly? List each one separately (e.g., "resume reviews", "client onboarding calls", "monthly reports")
+2. For each type of work you listed — describe what's typically involved. What does the task look like from start to finish?
+3. Are there any templates, frameworks, or processes I use or have mentioned for any of these tasks?
+4. Which of these tasks do I seem to do most often or find most important?
+5. Which tasks have I mentioned finding difficult, time-consuming, or frustrating?
+6. Are there any projects I'm currently working on (not just recurring tasks, but specific ongoing initiatives)?
+7. Have I mentioned any tools or documents I use for specific tasks? (e.g., "uses Google Docs for contracts", "tracks clients in a spreadsheet")
+8. Are there tasks I've asked you to help with repeatedly — that we have a pattern of working on together?
+
+For your answer, please structure it like this:
+
+RECURRING TASKS:
+- [Task name]: [What it involves, how I approach it, any tools or templates I use]
+- [repeat for each task]
+
+CURRENT PROJECTS:
+- [Project name]: [What it is, where it stands, what the goal is]
+
+TOOLS & DOCUMENTS:
+- [Tool or doc]: [What I use it for]
+
+Be specific. This is going to become my working file system in my new AI assistant.

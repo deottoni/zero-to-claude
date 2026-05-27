@@ -1,0 +1,14 @@
+I'm setting up a new AI assistant and need you to export what you know about my goals and desires.
+
+Based on everything we've discussed, please answer the following:
+
+1. What are my main professional goals right now? (where I want to take my work or business)
+2. What are my personal goals or life goals, if I've mentioned any?
+3. What does success look like for me — how have I described it?
+4. What am I most excited or passionate about in my work?
+5. What problems am I trying to solve, either in my business or my life?
+6. What have I said I want more of? (more clients, more time, more income, more impact, etc.)
+7. What am I working toward in the next 1-2 years, if I've mentioned it?
+8. Is there anything I've said I dream about or aspire to, even if it feels ambitious?
+
+Format your answer as a clean numbered list. Only include what you actually know from our conversations — if you don't have information on something, just say "not discussed."
