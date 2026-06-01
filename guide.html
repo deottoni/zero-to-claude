@@ -505,7 +505,7 @@
           <span>●</span> By Andre Ottoni
         </div>
         <h1>Your AI assistant<br/>that actually <span>knows you</span></h1>
-        <p>A step-by-step guide to set up Claude with your full context — extracted from ChatGPT, organized, and ready to use. No tech skills required.</p>
+        <p>A step-by-step guide to set up Claude with your full context — your background, goals, working style, and the work you actually do. No tech skills required.</p>
         <div class="hero-time">⏱ About 45–60 minutes total &nbsp;·&nbsp; Copy, paste, done</div>
       </section>
 
@@ -525,7 +525,7 @@
           </div>
           <div class="step-dot" id="dot-1" onclick="scrollToSection('phase1')">
             <div class="step-dot-circle">P1</div>
-            <div class="step-dot-label">Extract from ChatGPT</div>
+            <div class="step-dot-label">Your Context</div>
           </div>
           <div class="step-dot" id="dot-2" onclick="scrollToSection('phase2')">
             <div class="step-dot-circle">P2</div>
@@ -552,20 +552,18 @@
           <div class="info-card-title">What you'll need</div>
           <ul class="info-list">
             <li>A Claude account — free or paid (sign up at <strong>claude.ai</strong>)</li>
-            <li>Claude Cowork installed on your Mac (<strong>claude.ai/download</strong>)</li>
-            <li>This folder open as a project inside Claude Cowork</li>
-            <li>ChatGPT open in another browser tab — you'll be switching between the two</li>
+            <li>Either claude.ai (browser or desktop app) or Claude Code — pick one below</li>
+            <li>About 45–60 minutes of uninterrupted time</li>
           </ul>
         </div>
 
         <div class="info-card">
-          <div class="info-card-title">How to open this folder in Cowork</div>
+          <div class="info-card-title">Two ways to run this setup — pick one</div>
           <ul class="info-list">
-            <li>Open Claude Cowork on your Mac</li>
-            <li>Click <strong>"New Project"</strong> or the folder icon</li>
-            <li>Select this folder (<strong>zero-to-claude</strong>) from wherever you unzipped it</li>
-            <li>You'll see Claude greet you automatically — that means it's working ✅</li>
+            <li><strong>claude.ai:</strong> Go to claude.ai, create a new Project, paste the contents of CLAUDE.md as Project Instructions, and upload the files in the <strong>prompts/</strong> folder as knowledge. Then start a conversation.</li>
+            <li><strong>Claude Code:</strong> Open this folder in Claude Code. CLAUDE.md is read automatically and Claude will greet you on your first message.</li>
           </ul>
+          <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--muted);">Not sure which? Use <strong>claude.ai</strong> if you want to chat. Use <strong>Claude Code</strong> if you want the full file-based system with agents, skills, and templates written directly to your folder.</p>
         </div>
 
         <div class="andre-rec">
@@ -592,11 +590,11 @@
               <div class="step-checkbox" id="chk-p0-2" onclick="toggleCheck(event,'p0-2')">
                 <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
-              <div class="step-card-title" id="title-p0-2">I've downloaded Claude Cowork</div>
+              <div class="step-card-title" id="title-p0-2">I've chosen my setup path (claude.ai or Claude Code)</div>
               <span class="step-chevron">▾</span>
             </div>
             <div class="step-card-body">
-              <p class="step-instructions">Download from <strong>claude.ai/download</strong>. Install it like any Mac app — open the .dmg file, drag it to Applications, and open it.</p>
+              <p class="step-instructions"><strong>claude.ai:</strong> Go to claude.ai, create a new Project, paste CLAUDE.md as Project Instructions, and upload the <strong>prompts/</strong> files as knowledge.<br/><br/><strong>Claude Code:</strong> Open this folder with <code>claude /path/to/zero-to-claude</code>. CLAUDE.md loads automatically.</p>
             </div>
           </div>
 
@@ -605,11 +603,11 @@
               <div class="step-checkbox" id="chk-p0-3" onclick="toggleCheck(event,'p0-3')">
                 <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
               </div>
-              <div class="step-card-title" id="title-p0-3">This folder is open in Cowork and Claude greeted me</div>
+              <div class="step-card-title" id="title-p0-3">Claude is set up and I'm ready to start</div>
               <span class="step-chevron">▾</span>
             </div>
             <div class="step-card-body">
-              <p class="step-instructions">In Cowork, create a new project and select this <strong>zero-to-claude</strong> folder. Claude should automatically say hello and explain what's about to happen. If it doesn't, type <em>"hi, let's get started"</em> and it'll kick off from there.</p>
+              <p class="step-instructions">Claude should greet you and ask whether you're using claude.ai or Claude Code — that's its first question to branch the session correctly. If it doesn't say anything, type <em>"hi, let's get started"</em> and it'll kick off from there.</p>
             </div>
           </div>
         </div>
@@ -620,19 +618,19 @@
         <div class="section-header">
           <div class="section-number">1</div>
           <div>
-            <div class="section-title">Extract from ChatGPT</div>
-            <div class="section-subtitle">6 prompts · copy each one into ChatGPT · paste the answer back into Cowork</div>
+            <div class="section-title">Your Context</div>
+            <div class="section-subtitle">6 prompts · answer directly or use another AI tool · Claude builds your profile as you go</div>
           </div>
         </div>
 
         <div class="info-card">
           <div class="info-card-title">How this phase works</div>
-          <p>You'll do each prompt one at a time — Claude will give you the first one, you paste it into ChatGPT, work it out there until you're happy with the answer, then come back and paste the result into Cowork. Claude will start building your files while you work on the next one. Repeat 6 times.</p>
+          <p>Claude gives you one prompt at a time. You can answer directly — just talk through it in your own words. Or, if you already use another AI tool (ChatGPT, Gemini, etc.) and have a history there, paste the prompt in and bring back what it says about you. Either way works. Claude builds your profile from whatever you share.</p>
         </div>
 
         <div class="tip-box">
           <span class="tip-icon">💡</span>
-          <span>You can use the prompts below as a reference while you're working in ChatGPT. If ChatGPT gives a vague answer, ask it to be more specific — <em>"give me more detail on #3"</em> works great.</span>
+          <span>You can use the prompts below as a reference. If an answer feels thin or vague, ask for more detail — or just add it yourself in your own words.</span>
         </div>
 
         <!-- Prompt 1 -->
@@ -645,30 +643,21 @@
             <span class="step-chevron">▾</span>
           </div>
           <div class="step-card-body">
-            <p class="step-instructions">This prompt asks ChatGPT to describe you — your name, role, background, industry, and personality. It's the foundation everything else builds on.</p>
+            <p class="step-instructions">This prompt covers who you are professionally — your name, role, background, and personality. It's the foundation everything else builds on. Answer directly or paste it into another AI and bring back the answer.</p>
             <div class="prompt-box">
               <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → paste into ChatGPT</span>
+                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
                 <button class="copy-btn" onclick="copyPrompt(this, 'prompt1')">⎘ Copy prompt</button>
               </div>
-              <div class="prompt-text" id="prompt1">I'm setting up a new AI assistant and need you to help me export what you know about me.
+              <div class="prompt-text" id="prompt1">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
 
-Please answer the following about me based on everything you've learned from our conversations. Be specific — use real details, not generalizations.
-
-1. What is my full name, and what do I do professionally? (job title, role, type of work)
-2. Where am I based? (city, country, or general region)
-3. How would you describe my professional background in 3-5 sentences?
-4. What industry or field do I work in?
-5. Am I a business owner, employee, freelancer, or something else?
-6. Do I have a business or brand name? If so, what is it?
-7. What would you say makes me different or unique in what I do?
-8. How would you describe me as a person in 2-3 sentences? (personality, energy, how I come across)
-
-Format your answer as a clean list with each question numbered. Be specific and factual — only include what you actually know about me from our conversations, not guesses.</div>
+1. Who am I professionally — name, role, type of work, and whether I'm employed, freelance, or running my own business?
+2. How would you describe my background and what I actually do, in 3–5 sentences?
+3. What have I said makes me different or strongest at what I do? And how would you describe my personality in 2–3 sentences?</div>
             </div>
             <div class="tip-box">
               <span class="tip-icon">↩</span>
-              <span>Once ChatGPT answers, read it carefully. If something feels wrong or incomplete, ask ChatGPT to fix it before pasting back into Cowork.</span>
+              <span>Once you have an answer, read it carefully. If something feels wrong or incomplete, correct it before sharing it with Claude.</span>
             </div>
           </div>
         </div>
@@ -686,23 +675,14 @@ Format your answer as a clean list with each question numbered. Be specific and 
             <p class="step-instructions">This one captures what you're working toward — professional goals, personal aspirations, what success means to you, and what you want more of.</p>
             <div class="prompt-box">
               <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → paste into ChatGPT</span>
+                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
                 <button class="copy-btn" onclick="copyPrompt(this, 'prompt2')">⎘ Copy prompt</button>
               </div>
-              <div class="prompt-text" id="prompt2">I'm setting up a new AI assistant and need you to export what you know about my goals and desires.
+              <div class="prompt-text" id="prompt2">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
 
-Based on everything we've discussed, please answer the following:
-
-1. What are my main professional goals right now? (where I want to take my work or business)
-2. What are my personal goals or life goals, if I've mentioned any?
-3. What does success look like for me — how have I described it?
-4. What am I most excited or passionate about in my work?
-5. What problems am I trying to solve, either in my business or my life?
-6. What have I said I want more of? (more clients, more time, more income, more impact, etc.)
-7. What am I working toward in the next 1-2 years, if I've mentioned it?
-8. Is there anything I've said I dream about or aspire to, even if it feels ambitious?
-
-Format your answer as a clean numbered list. Only include what you actually know from our conversations — if you don't have information on something, just say "not discussed."</div>
+1. What are my main professional goals right now?
+2. What problems am I actively trying to solve, and what does success look like in the next 1–2 years?
+3. What have I said I want more of — clients, income, time, visibility, something else?</div>
             </div>
           </div>
         </div>
@@ -720,26 +700,17 @@ Format your answer as a clean numbered list. Only include what you actually know
             <p class="step-instructions">The most underrated prompt. This is where Claude learns what <em>not</em> to do — your pet peeves, corrections you've made, formats you hate. This is what makes it feel like it really knows you.</p>
             <div class="prompt-box">
               <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → paste into ChatGPT</span>
+                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
                 <button class="copy-btn" onclick="copyPrompt(this, 'prompt3')">⎘ Copy prompt</button>
               </div>
-              <div class="prompt-text" id="prompt3">I'm setting up a new AI assistant and need you to export what you know about my preferences, pet peeves, and the times you've had to adjust your behavior for me.
+              <div class="prompt-text" id="prompt3">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
 
-This one is really important — please be honest and specific.
-
-1. What are things I've explicitly told you NOT to do? (e.g., "stop using bullet points", "don't be so formal")
-2. What corrections have I made to your responses? (times I said something like "that's not right", "that's not my style", "too long", "wrong tone")
-3. What topics or types of content have I said I don't like or don't want?
-4. What frustrates me — about AI responses, about work, about people, about anything I've vented about?
-5. What writing style or tone do I NOT like? (e.g., too corporate, too casual, too long, too short)
-6. Have I ever said something like "I hate when..." or "never do this" — if so, what?
-7. Are there any words, phrases, or formats I've asked you to avoid?
-8. Is there anything about how I like to communicate that I've had to teach you over time?
-
-Format as a numbered list. Be specific — vague answers aren't helpful here. If you don't have information on something, say "not discussed."</div>
+1. What have I explicitly asked you not to do — any "stop doing X" or "never do Y" corrections?
+2. What feedback have I given on your responses — too long, wrong tone, not my style, over-explained?
+3. Are there specific words, phrases, or formats I've asked you to avoid?</div>
             </div>
             <div class="andre-rec">
-              <strong>What Andre recommends:</strong>&nbsp; Don't rush this one. If ChatGPT's answer feels thin, ask it: <em>"What's one time I pushed back on one of your responses? What did I say?"</em> — that usually unlocks better answers.
+              <strong>What Andre recommends:</strong>&nbsp; Don't rush this one. If the answer feels thin, dig deeper — ask: <em>"What's one time I pushed back on one of your responses? What did I say?"</em> That usually unlocks better answers.
             </div>
           </div>
         </div>
@@ -757,25 +728,15 @@ Format as a numbered list. Be specific — vague answers aren't helpful here. If
             <p class="step-instructions">How you communicate, what tools you use, your natural writing voice, how you like responses structured. This is what makes Claude feel like a good working partner.</p>
             <div class="prompt-box">
               <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → paste into ChatGPT</span>
+                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
                 <button class="copy-btn" onclick="copyPrompt(this, 'prompt4')">⎘ Copy prompt</button>
               </div>
-              <div class="prompt-text" id="prompt4">I'm setting up a new AI assistant and need you to export what you know about how I work and how I like to communicate.
+              <div class="prompt-text" id="prompt4">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
 
-Based on our conversations, please answer:
-
-1. How do I like AI responses formatted? (bullet points, paragraphs, short, long, with headers, without?)
-2. What tone do I prefer when someone is talking to me or writing for me? (professional, casual, direct, warm, funny?)
-3. How do I prefer to give instructions — detailed and specific, or loose and open-ended?
-4. Do I tend to work quickly and want fast answers, or do I take my time and want thorough explanations?
-5. When I'm writing something (emails, posts, messages) — what's my natural writing voice like?
-6. How do I handle feedback — do I like directness, or do I prefer a softer approach?
-7. What times of day or work patterns have I mentioned? (early bird, night owl, busy on certain days, etc.)
-8. Do I work alone mostly, or do I collaborate with a team? What do I prefer?
-9. What tools or apps do I use regularly that I've mentioned? (email, project management, social media, etc.)
-10. How do I describe my ideal version of productivity or a good work day?
-
-Format as a numbered list. Use real examples from our conversations where possible. Say "not discussed" if you genuinely don't have information on something.</div>
+1. How do I like responses formatted — bullet points, paragraphs, headers, short, long?
+2. What tone works best — casual, direct, formal, warm, blunt?
+3. What's my natural writing voice like when I write emails, posts, or messages?
+4. What tools and apps do I use regularly?</div>
             </div>
           </div>
         </div>
@@ -786,32 +747,24 @@ Format as a numbered list. Use real examples from our conversations where possib
             <div class="step-checkbox" id="chk-p1-5" onclick="toggleCheck(event,'p1-5')">
               <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <div class="step-card-title" id="title-p1-5">Prompt 5 — My Business</div>
+            <div class="step-card-title" id="title-p1-5">Prompt 5 — My Work Context</div>
             <span class="step-chevron">▾</span>
           </div>
           <div class="step-card-body">
-            <p class="step-instructions">Your business in detail — who you serve, what you offer, how you get clients, what your clients are struggling with, and your positioning in the market.</p>
+            <p class="step-instructions">Your work context — what you do, who you work with, what a typical engagement looks like, and how you find new work. This applies whether you're employed, freelance, or running your own thing.</p>
             <div class="prompt-box">
               <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → paste into ChatGPT</span>
+                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
                 <button class="copy-btn" onclick="copyPrompt(this, 'prompt5')">⎘ Copy prompt</button>
               </div>
-              <div class="prompt-text" id="prompt5">I'm setting up a new AI assistant and need you to export what you know about my business and the people I work with.
+              <div class="prompt-text" id="prompt5">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
 
-Based on our conversations, please answer:
+My Work Context
 
-1. What is my business or what service/product do I offer? Describe it clearly.
-2. Who are my ideal clients or customers? (type of person, industry, size of business, demographics)
-3. How do I find or attract clients — what's my main way of getting new business?
-4. What does a typical client engagement or project look like for me? (how long, what's involved, how it ends)
-5. What do my clients usually come to me struggling with, and what do they get from working with me?
-6. Do I have any competitors or others in my space that I've mentioned?
-7. What prices, packages, or offers do I have, if I've mentioned them?
-8. What platforms or channels do I use to promote my work? (Instagram, LinkedIn, email list, website, etc.)
-9. Have I mentioned any clients, case studies, or success stories?
-10. Is there anything specific about my industry or niche that's important to understand?
-
-Format as a numbered list. Include real specifics from our conversations. Say "not discussed" if something wasn't covered.</div>
+1. What do I do and what do I offer — describe my work clearly?
+2. Who do I work for or with, and what do they typically need from me?
+3. What does a typical project or engagement look like — start to finish?
+4. How do I find or attract new work? What platforms or channels am I active on?</div>
             </div>
           </div>
         </div>
@@ -829,23 +782,17 @@ Format as a numbered list. Include real specifics from our conversations. Say "n
             <p class="step-instructions">This one builds your actual work folders inside Claude. After you paste the answer back, Claude will create a dedicated folder for each of your recurring tasks — pre-loaded with everything it knows about how you do that work.</p>
             <div class="prompt-box">
               <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → paste into ChatGPT</span>
+                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
                 <button class="copy-btn" onclick="copyPrompt(this, 'prompt6')">⎘ Copy prompt</button>
               </div>
-              <div class="prompt-text" id="prompt6">I'm setting up a new AI assistant and need you to export what you know about the actual work I do — my recurring projects, tasks, and workflows.
+              <div class="prompt-text" id="prompt6">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
 
-This is the most practical one, so please be as specific as possible.
+1. What are the main types of work I do regularly? List each one separately.
+2. For each — what does it involve from start to finish?
+3. Are there templates, frameworks, or processes I use for any of these?
+4. What projects am I currently working on — specific ongoing initiatives, not just recurring tasks?
 
-1. What are the main types of work I do regularly? List each one separately (e.g., "resume reviews", "client onboarding calls", "monthly reports")
-2. For each type of work you listed — describe what's typically involved. What does the task look like from start to finish?
-3. Are there any templates, frameworks, or processes I use or have mentioned for any of these tasks?
-4. Which of these tasks do I seem to do most often or find most important?
-5. Which tasks have I mentioned finding difficult, time-consuming, or frustrating?
-6. Are there any projects I'm currently working on (not just recurring tasks, but specific ongoing initiatives)?
-7. Have I mentioned any tools or documents I use for specific tasks? (e.g., "uses Google Docs for contracts", "tracks clients in a spreadsheet")
-8. Are there tasks I've asked you to help with repeatedly — that we have a pattern of working on together?
-
-For your answer, please structure it like this:
+Structure your answer like this:
 
 RECURRING TASKS:
 - [Task name]: [What it involves, how I approach it, any tools or templates I use]
@@ -854,13 +801,11 @@ CURRENT PROJECTS:
 - [Project name]: [What it is, where it stands, what the goal is]
 
 TOOLS &amp; DOCUMENTS:
-- [Tool or doc]: [What I use it for]
-
-Be specific. This is going to become my working file system in my new AI assistant.</div>
+- [Tool or doc]: [What I use it for]</div>
             </div>
             <div class="tip-box">
               <span class="tip-icon">📁</span>
-              <span>After you paste this back into Cowork, Claude will build your project folders automatically. You'll see a file structure like the one below appear in your project.</span>
+              <span>After you share this answer with Claude, it will build your project folders automatically. In Claude Code, you'll see the file structure appear in your folder. In claude.ai, Claude will describe the structure it's creating.</span>
             </div>
             <div class="folder-tree">
               <span class="dir">📁 my-brain/</span><br>
@@ -888,7 +833,7 @@ Be specific. This is going to become my working file system in my new AI assista
 
         <div class="info-card">
           <div class="info-card-title">What happens here</div>
-          <p>After all 6 prompts, Claude will ask you a handful of questions that ChatGPT wouldn't know — like your website, what you most want help with daily, and how you like responses. Answer them conversationally, one at a time, right inside Cowork. No copy-pasting needed.</p>
+          <p>After all 6 prompts, Claude will ask you a handful of questions that only you can answer — like your website, what you most want help with daily, and how you like responses. Answer them conversationally, one at a time. No copy-pasting needed.</p>
         </div>
 
         <div class="info-card" style="margin-top:0.75rem">
@@ -911,7 +856,7 @@ Be specific. This is going to become my working file system in my new AI assista
             <span class="step-chevron">▾</span>
           </div>
           <div class="step-card-body">
-            <p class="step-instructions">Just answer in plain language inside Cowork. No right or wrong answers. Claude will update your profile files as you go.</p>
+            <p class="step-instructions">Just answer in plain language. No right or wrong answers. Claude will update your profile files as you go.</p>
           </div>
         </div>
       </section>
@@ -934,22 +879,22 @@ Be specific. This is going to become my working file system in my new AI assista
         <div class="wow-test">
           <div class="wow-number">1</div>
           <div class="wow-content">
-            <div class="wow-title">The Email Test</div>
-            <div class="wow-desc">Ask Claude to draft a follow-up email to a recent client. Notice how it uses your tone, your voice, your business context — without you explaining any of it.</div>
+            <div class="wow-title">The Personalized Message</div>
+            <div class="wow-desc">Claude drafts a message for you unprompted — a follow-up, client note, or quick pitch in your actual voice. It won't ask what you do, who your clients are, or how you like things written. It already knows.</div>
           </div>
         </div>
         <div class="wow-test">
           <div class="wow-number">2</div>
           <div class="wow-content">
-            <div class="wow-title">The Content Test</div>
-            <div class="wow-desc">Ask Claude to write a short social media post about your business or something you help clients with. Watch it capture your personality without being prompted.</div>
+            <div class="wow-title">The Agent</div>
+            <div class="wow-desc">Claude invokes one of the custom agents it built for you — a persona or perspective tailored to your dominant use case. Watch it respond as someone deeply familiar with your type of work.</div>
           </div>
         </div>
         <div class="wow-test">
           <div class="wow-number">3</div>
           <div class="wow-content">
-            <div class="wow-title">The Work Test</div>
-            <div class="wow-desc">Ask Claude to help with one of your most common recurring tasks. It already has your approach, standards, and preferences loaded from Prompt 6.</div>
+            <div class="wow-title">The Skill</div>
+            <div class="wow-desc">Claude triggers one of the skills it built for a task you do regularly. You say a single phrase — it executes a full, structured response built around your specific workflow.</div>
           </div>
         </div>
 
@@ -962,7 +907,7 @@ Be specific. This is going to become my working file system in my new AI assista
             <span class="step-chevron">▾</span>
           </div>
           <div class="step-card-body">
-            <p class="step-instructions">You're done. From now on, every Claude Cowork session in this project starts with full context about who you are, how you work, and what you do. No more re-explaining yourself.</p>
+            <p class="step-instructions">You're done. From now on, every Claude session in this project starts with full context about who you are, how you work, and what you do — plus agents, skills, and templates built around your actual work. No more re-explaining yourself.</p>
             <div class="andre-rec" style="margin-top:0.75rem">
               <strong>What Andre recommends:</strong>&nbsp; Revisit your <strong>my-brain/</strong> files every few months as your business evolves. The more current it stays, the more useful Claude becomes.
             </div>
