@@ -46,12 +46,20 @@ When setup is complete, Claude writes agents to `.claude/agents/`, skills to `.c
 
 ---
 
+## Visual guide
+
+**Live:** [deottoni.github.io/zero-to-claude](https://deottoni.github.io/zero-to-claude/)
+
+Or open `index.html` locally — double-click the file or drag it into any browser. No install needed.
+
+---
+
 ## What's in this folder
 
 | File/Folder | What it is |
 |-------------|------------|
 | `CLAUDE.md` | Instructions that run the guided setup |
-| `guide.html` | Visual step-by-step reference (open in any browser) |
+| `index.html` | Visual step-by-step reference — open in browser or visit the link above |
 | `prompts/` | The 6 context prompts |
 | `templates/` | Generated post-onboarding (populated during setup) |
 | `.claude/agents/` | Generated agents — Claude Code only |
