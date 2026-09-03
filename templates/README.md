@@ -2,13 +2,14 @@
 
 Post-onboarding generated templates.
 
-This folder is populated automatically during the Zero to Claude setup. After you complete the 6 context prompts and Phase 2 questions, Claude identifies your dominant use cases and generates a starting template for each one.
+This folder is populated automatically during the Zero to Claude setup. After you finish the context rounds, Claude identifies your dominant use cases (solopreneur track) or priority business functions (SMB track) and generates a starting template for each one.
 
 **Examples of what gets generated here:**
 - A proposal or brief template for client work
 - A draft structure for the emails or posts you write most
 - A project planning or decision memo template
 - A research or analysis summary format
+- SMB: a template tied to a specific function, e.g. a job-post outline for HR or a campaign brief for marketing
 
 **How to use these files:**
 Open any template when starting a new piece of work. They're pre-structured around how you actually work — not generic boilerplate.

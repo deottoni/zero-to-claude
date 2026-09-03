@@ -5,52 +5,39 @@ by [Andre Ottoni](https://andreottoni.com)
 
 ## What this is
 
-A guided setup that gives Claude a complete picture of who you are before your first real conversation. By the end, Claude knows your background, goals, working style, and the specific work you do — so you never have to re-explain yourself.
+A guided setup that gives Claude a complete picture of who you are — or who your business is — before your first real conversation. By the end, Claude knows your background, goals, working style, and the specific work you do, so you never have to re-explain yourself.
 
-**What you walk away with:**
-- A personal profile Claude reads at the start of every session
-- Work folders for your recurring tasks, pre-loaded with context
-- Agents built around your dominant use cases (a perspective Claude inhabits for that type of work)
-- Skills that trigger structured help for the things you do most
-- Templates for your most common deliverables
-- A voice guide so responses always sound right for you
+Everything you need is in this folder. There's no separate app, tracker, or webpage to keep open — you open this folder in Claude, and Claude runs the whole thing conversationally from `CLAUDE.md`, start to finish. Takes about 30-45 minutes.
 
-The whole setup takes about 45–60 minutes.
+There are two tracks:
 
----
+- **Solopreneur** — you're a solo operator. You get a personal profile ("brain"), agents and skills built around your actual work, and templates for what you make most.
+- **SMB** — this is for a team or small business. You get the same idea, scoped to the business: a shared company profile, plus agents built around the specific functions (sales, ops, marketing, HR, etc.) where you said AI could help most.
 
-## Two ways to use this
-
-### Option A — claude.ai (browser or app)
-
-Best if you want a conversational setup and plan to use Claude through the website or app.
-
-1. Go to [claude.ai](https://claude.ai) and create a new Project
-2. Open `CLAUDE.md` from this folder and paste its entire contents into the Project Instructions
-3. Upload the files in `prompts/` as Project knowledge
-4. Start a conversation — Claude will greet you and walk you through everything
-
-When setup is complete, Claude outputs structured text blocks you can save back into Project Instructions to keep your profile current.
-
-### Option B — Claude Code
-
-Best if you want the full file-based system, with agents, skills, and templates written directly to this folder.
-
-1. Open this folder in Claude Code (`claude /path/to/zero-to-claude`)
-2. `CLAUDE.md` is read automatically — Claude will greet you on first message
-3. Work through the setup; Claude writes files as you go
-
-When setup is complete, Claude writes agents to `.claude/agents/`, skills to `.claude/skills/`, and templates to `templates/` — ready to use in future sessions.
-
-**Not sure which to pick?** Use claude.ai if you want to chat. Use Claude Code if you want the full file-based system.
+You don't need to pick a track yourself — Claude asks at the start and takes it from there.
 
 ---
 
-## Visual guide
+## How to run it
+
+1. Get this folder onto your machine — clone this repo, or download it as a ZIP and unzip it.
+2. Open it in whichever Claude surface you use:
+   - **Claude Code** — open the folder in your terminal (`claude /path/to/zero-to-claude`)
+   - **Cowork** — open the folder as a workspace
+   - **claude.ai** (browser or app) — create a new Project, paste the entire contents of `CLAUDE.md` into the Project Instructions, and upload everything in `/prompts` and `/tracks` as Project knowledge
+3. Say "hi" or "let's go." Claude reads `CLAUDE.md`, asks two quick questions (which track, and whether it can write files here), and runs the rest of the setup with you.
+
+That's it. Claude tracks where you are in the process itself — there's nothing to check off anywhere else.
+
+**If you're in Claude Code or Cowork**, Claude writes your profile, agents, skills, and templates directly into this folder as you go. **If you're on claude.ai**, Claude gives you clearly labeled text you copy into your Project's Instructions or knowledge instead — same outcome, just no local files.
+
+---
+
+## Optional: visual preview
 
 **Live:** [deottoni.github.io/zero-to-claude](https://deottoni.github.io/zero-to-claude/)
 
-Or open `index.html` locally — double-click the file or drag it into any browser. No install needed.
+`index.html` is a short preview of what the setup covers and what you walk away with. It's entirely optional — you never need to open it to actually do the setup, and it doesn't track your progress. Claude does that in conversation.
 
 ---
 
@@ -58,14 +45,16 @@ Or open `index.html` locally — double-click the file or drag it into any brows
 
 | File/Folder | What it is |
 |-------------|------------|
-| `CLAUDE.md` | Instructions that run the guided setup |
-| `index.html` | Visual step-by-step reference — open in browser or visit the link above |
-| `prompts/` | The 6 context prompts |
-| `templates/` | Generated post-onboarding (populated during setup) |
-| `.claude/agents/` | Generated agents — Claude Code only |
-| `.claude/skills/` | Generated skills — Claude Code only |
+| `CLAUDE.md` | The master file — Claude reads this first, asks your two starting questions, and hands off to the right track |
+| `tracks/solopreneur.md` | The full flow for a solo operator |
+| `tracks/smb.md` | The full flow for a team / small business |
+| `prompts/` | The 3-4 context-gathering prompts used by both tracks |
+| `templates/` | Generated after setup — starting points for your most common deliverables |
+| `.claude/agents/` | Generated agents — Claude Code / Cowork only |
+| `.claude/skills/` | Generated skills — Claude Code / Cowork only |
+| `index.html` | Optional visual preview — not required to run the setup |
 
-After setup, Claude creates a `my-brain/` folder with your personal profile files. That's your AI brain — keep this folder safe and use it as your project going forward.
+After setup, you'll have a `my-brain/` folder (solopreneur) or `company-brain/` folder (SMB) with your profile files. That's your AI brain — keep it safe and use it as your project going forward.
 
 ---
 

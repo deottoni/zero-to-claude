@@ -1,9 +1,8 @@
 Answer the following about me based on everything you know from our conversations. Be specific — real details only.
 
 1. What are the main types of work I do regularly? List each one separately.
-2. For each — what does it involve from start to finish?
-3. Are there templates, frameworks, or processes I use for any of these?
-4. What projects am I currently working on — specific ongoing initiatives, not just recurring tasks?
+2. For each — what does it involve from start to finish, and are there templates, frameworks, or processes I already use?
+3. What projects am I currently working on — specific ongoing initiatives, not just recurring tasks?
 
 Structure your answer like this:
 

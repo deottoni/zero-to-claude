@@ -13,1021 +13,122 @@
     :root {
       --bg:           oklch(0.145 0 0);
       --card:         oklch(0.185 0 0);
-      --card-hover:   oklch(0.21 0 0);
       --border:       oklch(0.269 0 0);
       --fg:           oklch(0.985 0 0);
       --muted:        oklch(0.708 0 0);
       --accent:       oklch(0.488 0.243 264.376);
-      --accent-glow:  oklch(0.488 0.243 264.376 / 0.15);
-      --accent-dim:   oklch(0.38 0.18 264.376);
-      --success:      oklch(0.696 0.17 162.48);
-      --radius:       0.625rem;
+      --radius:       0.75rem;
       --font: 'Geist', 'Inter', system-ui, -apple-system, sans-serif;
     }
-
-    html { scroll-behavior: smooth; }
 
     body {
       font-family: var(--font);
       background: var(--bg);
       color: var(--fg);
-      min-height: 100vh;
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
 
-    /* ── Layout ── */
-    .container { max-width: 780px; margin: 0 auto; padding: 0 1.5rem; }
+    .container { max-width: 760px; margin: 0 auto; padding: 0 1.5rem; }
 
-    /* ── Header ── */
     header {
       border-bottom: 1px solid var(--border);
-      padding: 1.5rem 0;
-      position: sticky;
-      top: 0;
-      background: var(--bg);
-      z-index: 50;
-      backdrop-filter: blur(8px);
+      padding: 1.25rem 0;
     }
-    .header-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .logo { display: flex; align-items: center; gap: 0.6rem; }
-    .logo-dot {
-      width: 8px; height: 8px;
-      border-radius: 50%;
-      background: var(--accent);
-      box-shadow: 0 0 8px var(--accent);
-    }
-    .logo-text { font-size: 0.9rem; font-weight: 600; letter-spacing: -0.01em; }
-    .logo-sub { font-size: 0.75rem; color: var(--muted); font-weight: 400; }
-    .header-link {
-      font-size: 0.75rem;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .header-link:hover { color: var(--fg); }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; }
+    .logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; }
+    .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
+    header a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
+    header a:hover { color: var(--fg); }
 
-    /* ── Hero ── */
-    .hero {
-      padding: 4rem 0 3rem;
-      text-align: center;
-    }
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.7rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
-      border: 1px solid oklch(0.488 0.243 264.376 / 0.35);
-      background: var(--accent-glow);
-      padding: 0.3rem 0.75rem;
-      border-radius: 100px;
-      margin-bottom: 1.5rem;
-    }
-    .hero h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1.1;
-      margin-bottom: 1rem;
-    }
+    .hero { padding: 4.5rem 0 3rem; text-align: center; }
+    .hero h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; }
     .hero h1 span { color: var(--accent); }
-    .hero p {
-      font-size: 1.05rem;
-      color: var(--muted);
-      max-width: 520px;
-      margin: 0 auto 2rem;
-      line-height: 1.7;
-    }
-    .hero-time {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      font-size: 0.8rem;
-      color: var(--muted);
-    }
+    .hero p { margin-top: 1.1rem; color: var(--muted); font-size: 1.05rem; max-width: 46ch; margin-left: auto; margin-right: auto; }
+    .byline { margin-top: 1rem; font-size: 0.9rem; color: var(--muted); }
+    .byline a { color: var(--fg); }
 
-    /* ── Progress bar ── */
-    .progress-section {
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--border);
-    }
-    .progress-label {
-      display: flex;
-      justify-content: space-between;
-      font-size: 0.75rem;
-      color: var(--muted);
-      margin-bottom: 0.6rem;
-    }
-    .progress-track {
-      height: 4px;
-      background: var(--border);
-      border-radius: 100px;
-      overflow: hidden;
-    }
-    .progress-fill {
-      height: 100%;
-      background: var(--accent);
-      border-radius: 100px;
-      width: 0%;
-      transition: width 0.4s ease;
-      box-shadow: 0 0 8px var(--accent);
-    }
-    .progress-steps {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 1rem;
-      gap: 0.4rem;
-    }
-    .step-dot {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.3rem;
-      cursor: pointer;
-    }
-    .step-dot-circle {
-      width: 28px; height: 28px;
-      border-radius: 50%;
-      border: 1.5px solid var(--border);
+    .tracks { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin: 2.5rem 0; }
+    @media (max-width: 640px) { .tracks { grid-template-columns: 1fr; } }
+    .track-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; }
+    .track-card .tag { display: inline-block; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; color: var(--accent); margin-bottom: 0.5rem; }
+    .track-card h3 { font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .track-card p { color: var(--muted); font-size: 0.92rem; }
+
+    section { padding: 2.5rem 0; border-top: 1px solid var(--border); }
+    section h2 { font-size: 1.3rem; margin-bottom: 1.25rem; }
+
+    .steps { display: flex; flex-direction: column; gap: 1rem; }
+    .step { display: flex; gap: 1rem; align-items: flex-start; }
+    .step-num {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
+      background: var(--card); border: 1px solid var(--border);
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.65rem;
-      font-weight: 600;
-      color: var(--muted);
-      transition: all 0.2s;
-      background: var(--bg);
+      font-size: 0.85rem; color: var(--accent); font-weight: 600;
     }
-    .step-dot.active .step-dot-circle {
-      border-color: var(--accent);
-      color: var(--accent);
-      box-shadow: 0 0 0 3px var(--accent-glow);
-    }
-    .step-dot.done .step-dot-circle {
-      background: var(--accent);
-      border-color: var(--accent);
-      color: var(--bg);
-    }
-    .step-dot-label {
-      font-size: 0.6rem;
-      color: var(--muted);
-      text-align: center;
-      line-height: 1.3;
-      max-width: 60px;
-    }
-    .step-dot.active .step-dot-label { color: var(--fg); }
+    .step p { color: var(--muted); font-size: 0.95rem; }
+    .step strong { color: var(--fg); }
+    code { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 0.1rem 0.4rem; font-size: 0.85em; }
 
-    /* ── Section titles ── */
-    .section { padding: 2.5rem 0; border-bottom: 1px solid var(--border); }
-    .section:last-of-type { border-bottom: none; }
-    .section-header {
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-    .section-number {
-      width: 32px; height: 32px; min-width: 32px;
-      border-radius: 50%;
-      background: var(--accent-glow);
-      border: 1px solid oklch(0.488 0.243 264.376 / 0.3);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: var(--accent);
-      margin-top: 0.1rem;
-    }
-    .section-title { font-size: 1.2rem; font-weight: 600; letter-spacing: -0.02em; }
-    .section-subtitle { font-size: 0.85rem; color: var(--muted); margin-top: 0.2rem; }
-
-    /* ── Step cards ── */
-    .step-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      margin-bottom: 1rem;
-      transition: border-color 0.2s;
-    }
-    .step-card.active-card { border-color: oklch(0.488 0.243 264.376 / 0.4); }
-    .step-card.done-card { border-color: oklch(0.696 0.17 162.48 / 0.3); }
-
-    .step-card-header {
-      display: flex;
-      align-items: center;
-      gap: 0.85rem;
-      padding: 1rem 1.25rem;
-      cursor: pointer;
-      background: var(--card);
-      user-select: none;
-      transition: background 0.15s;
-    }
-    .step-card-header:hover { background: var(--card-hover); }
-
-    .step-checkbox {
-      width: 20px; height: 20px; min-width: 20px;
-      border-radius: 6px;
-      border: 1.5px solid var(--border);
-      background: transparent;
-      display: flex; align-items: center; justify-content: center;
-      cursor: pointer;
-      transition: all 0.2s;
-    }
-    .step-checkbox.checked {
-      background: var(--success);
-      border-color: var(--success);
-    }
-    .step-checkbox svg { display: none; }
-    .step-checkbox.checked svg { display: block; }
-
-    .step-card-title {
-      flex: 1;
-      font-size: 0.9rem;
-      font-weight: 500;
-    }
-    .step-card-title.checked { text-decoration: line-through; color: var(--muted); }
-
-    .step-chevron {
-      color: var(--muted);
-      transition: transform 0.2s;
-      font-size: 0.75rem;
-    }
-    .step-card.open .step-chevron { transform: rotate(180deg); }
-
-    .step-card-body {
-      display: none;
-      padding: 0 1.25rem 1.25rem;
-      background: var(--card);
-      border-top: 1px solid var(--border);
-    }
-    .step-card.open .step-card-body { display: block; }
-
-    .step-instructions {
-      font-size: 0.85rem;
-      color: var(--muted);
-      line-height: 1.7;
-      margin: 1rem 0 0.75rem;
-    }
-    .step-instructions strong { color: var(--fg); }
-
-    /* ── Prompt box ── */
-    .prompt-box {
-      background: oklch(0.12 0 0);
-      border: 1px solid var(--border);
-      border-radius: calc(var(--radius) - 2px);
-      margin: 0.75rem 0;
-    }
-    .prompt-box-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.6rem 0.9rem;
-      border-bottom: 1px solid var(--border);
-    }
-    .prompt-box-label {
-      font-size: 0.65rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-    .copy-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.35rem;
-      font-size: 0.7rem;
-      font-weight: 500;
-      font-family: var(--font);
-      color: var(--accent);
-      background: var(--accent-glow);
-      border: 1px solid oklch(0.488 0.243 264.376 / 0.3);
-      border-radius: 6px;
-      padding: 0.25rem 0.65rem;
-      cursor: pointer;
-      transition: all 0.15s;
-    }
-    .copy-btn:hover {
-      background: oklch(0.488 0.243 264.376 / 0.25);
-    }
-    .copy-btn.copied {
-      color: var(--success);
-      border-color: oklch(0.696 0.17 162.48 / 0.3);
-      background: oklch(0.696 0.17 162.48 / 0.1);
-    }
-    .prompt-text {
-      padding: 0.9rem;
-      font-size: 0.78rem;
-      line-height: 1.75;
-      color: oklch(0.82 0 0);
-      white-space: pre-wrap;
-      font-family: var(--font);
-      max-height: 220px;
-      overflow-y: auto;
-    }
-    .prompt-text::-webkit-scrollbar { width: 4px; }
-    .prompt-text::-webkit-scrollbar-track { background: transparent; }
-    .prompt-text::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
-
-    /* ── Tip box ── */
-    .tip-box {
-      display: flex;
-      gap: 0.6rem;
-      background: oklch(0.488 0.243 264.376 / 0.08);
-      border: 1px solid oklch(0.488 0.243 264.376 / 0.2);
-      border-radius: calc(var(--radius) - 2px);
-      padding: 0.75rem 0.9rem;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      color: oklch(0.82 0 0);
-      line-height: 1.6;
-    }
-    .tip-icon { font-size: 0.85rem; margin-top: 0.05rem; flex-shrink: 0; }
-
-    /* ── Andre recommends ── */
-    .andre-rec {
-      display: flex;
-      gap: 0.6rem;
-      background: oklch(0.488 0.243 264.376 / 0.05);
-      border-left: 2px solid var(--accent);
-      padding: 0.75rem 0.9rem;
-      margin-top: 0.75rem;
-      font-size: 0.78rem;
-      color: var(--muted);
-      line-height: 1.6;
-      border-radius: 0 calc(var(--radius) - 2px) calc(var(--radius) - 2px) 0;
-    }
-    .andre-rec strong { color: var(--accent); }
-
-    /* ── Info cards (Phase 0 & 2 & 3) ── */
-    .info-card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.25rem;
-      background: var(--card);
-      margin-bottom: 0.75rem;
-    }
-    .info-card-title {
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.4rem;
-    }
-    .info-card p {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.65;
-    }
-    .info-list {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
-      margin-top: 0.5rem;
-    }
-    .info-list li {
-      display: flex;
-      align-items: flex-start;
-      gap: 0.5rem;
-      font-size: 0.82rem;
-      color: var(--muted);
-    }
-    .info-list li::before {
-      content: '→';
-      color: var(--accent);
-      font-size: 0.75rem;
-      margin-top: 0.1rem;
-      flex-shrink: 0;
+    .note {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1rem 1.25rem; color: var(--muted); font-size: 0.9rem; margin-top: 1.5rem;
     }
 
-    /* ── Folder tree ── */
-    .folder-tree {
-      background: oklch(0.12 0 0);
-      border: 1px solid var(--border);
-      border-radius: calc(var(--radius) - 2px);
-      padding: 1rem 1.1rem;
-      font-size: 0.78rem;
-      font-family: 'Geist Mono', 'Menlo', monospace;
-      color: oklch(0.82 0 0);
-      line-height: 1.9;
-      margin: 0.75rem 0;
-    }
-    .folder-tree .dir { color: var(--accent); }
-    .folder-tree .file { color: oklch(0.75 0 0); }
-    .folder-tree .comment { color: var(--muted); font-size: 0.72rem; }
-
-    /* ── Wow test ── */
-    .wow-test {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      padding: 1.1rem 1.25rem;
-      background: var(--card);
-      margin-bottom: 0.75rem;
-      display: flex;
-      gap: 0.85rem;
-      align-items: flex-start;
-    }
-    .wow-number {
-      width: 26px; height: 26px; min-width: 26px;
-      border-radius: 50%;
-      border: 1.5px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.7rem;
-      font-weight: 700;
-      color: var(--muted);
-      margin-top: 0.05rem;
-    }
-    .wow-content { flex: 1; }
-    .wow-title { font-size: 0.85rem; font-weight: 600; margin-bottom: 0.2rem; }
-    .wow-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.55; }
-
-    /* ── Footer ── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 2rem 0;
-      text-align: center;
-    }
-    .footer-logo {
-      font-size: 0.85rem;
-      font-weight: 600;
-      margin-bottom: 0.3rem;
-    }
-    .footer-sub {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-    .footer-sub a {
-      color: var(--accent);
-      text-decoration: none;
-    }
-    .footer-sub a:hover { text-decoration: underline; }
-
-    /* ── Scrollbar ── */
-    ::-webkit-scrollbar { width: 6px; }
-    ::-webkit-scrollbar-track { background: var(--bg); }
-    ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
-
-    /* ── Responsive ── */
-    @media (max-width: 600px) {
-      .step-dot-label { display: none; }
-      .hero h1 { font-size: 1.8rem; }
-    }
+    footer { padding: 3rem 0; text-align: center; color: var(--muted); font-size: 0.85rem; }
+    footer a { color: var(--fg); }
   </style>
 </head>
 <body>
-
-  <!-- Header -->
   <header>
-    <div class="container">
-      <div class="header-inner">
-        <div class="logo">
-          <div class="logo-dot"></div>
-          <div>
-            <div class="logo-text">Zero to Claude</div>
-            <div class="logo-sub">Setup Framework</div>
-          </div>
-        </div>
-        <a href="https://andreottoni.com" target="_blank" class="header-link">andreottoni.com ↗</a>
-      </div>
+    <div class="container header-inner">
+      <div class="logo"><span class="logo-dot"></span> Zero to Claude</div>
+      <a href="https://andreottoni.com" target="_blank" rel="noopener">andreottoni.com</a>
     </div>
   </header>
 
-  <main>
-    <div class="container">
+  <div class="container">
+    <div class="hero">
+      <h1>Your AI assistant<br/>that actually <span>knows you</span></h1>
+      <p>A guided setup that gives Claude the full picture of you — or your business — before your first real conversation.</p>
+      <div class="byline">by <a href="https://andreottoni.com" target="_blank" rel="noopener">Andre Ottoni</a></div>
+    </div>
 
-      <!-- Hero -->
-      <section class="hero">
-        <div class="hero-badge">
-          <span>●</span> By Andre Ottoni
-        </div>
-        <h1>Your AI assistant<br/>that actually <span>knows you</span></h1>
-        <p>A step-by-step guide to set up Claude with your full context — your background, goals, working style, and the work you actually do. No tech skills required.</p>
-        <div class="hero-time">⏱ About 45–60 minutes total &nbsp;·&nbsp; Copy, paste, done</div>
-      </section>
-
-      <!-- Progress -->
-      <section class="progress-section">
-        <div class="progress-label">
-          <span>Your progress</span>
-          <span id="progress-pct">0 of 10 steps done</span>
-        </div>
-        <div class="progress-track">
-          <div class="progress-fill" id="progress-fill"></div>
-        </div>
-        <div class="progress-steps">
-          <div class="step-dot" id="dot-0" onclick="scrollToSection('phase0')">
-            <div class="step-dot-circle">P0</div>
-            <div class="step-dot-label">Before you start</div>
-          </div>
-          <div class="step-dot" id="dot-1" onclick="scrollToSection('phase1')">
-            <div class="step-dot-circle">P1</div>
-            <div class="step-dot-label">Your Context</div>
-          </div>
-          <div class="step-dot" id="dot-2" onclick="scrollToSection('phase2')">
-            <div class="step-dot-circle">P2</div>
-            <div class="step-dot-label">Fill the gaps</div>
-          </div>
-          <div class="step-dot" id="dot-3" onclick="scrollToSection('phase3')">
-            <div class="step-dot-circle">P3</div>
-            <div class="step-dot-label">The wow test</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ────────────── PHASE 0 ────────────── -->
-      <section class="section" id="phase0">
-        <div class="section-header">
-          <div class="section-number">0</div>
-          <div>
-            <div class="section-title">Before you start</div>
-            <div class="section-subtitle">Get set up in 5 minutes — no tech knowledge needed</div>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <div class="info-card-title">What you'll need</div>
-          <ul class="info-list">
-            <li>A Claude account — free or paid (sign up at <strong>claude.ai</strong>)</li>
-            <li>Either claude.ai (browser or desktop app) or Claude Code — pick one below</li>
-            <li>About 45–60 minutes of uninterrupted time</li>
-          </ul>
-        </div>
-
-        <div class="info-card">
-          <div class="info-card-title">Two ways to run this setup — pick one</div>
-          <ul class="info-list">
-            <li><strong>claude.ai:</strong> Go to claude.ai, create a new Project, paste the contents of CLAUDE.md as Project Instructions, and upload the files in the <strong>prompts/</strong> folder as knowledge. Then start a conversation.</li>
-            <li><strong>Claude Code:</strong> Open this folder in Claude Code. CLAUDE.md is read automatically and Claude will greet you on your first message.</li>
-          </ul>
-          <p style="margin-top: 0.75rem; font-size: 0.85rem; color: var(--muted);">Not sure which? Use <strong>claude.ai</strong> if you want to chat. Use <strong>Claude Code</strong> if you want the full file-based system with agents, skills, and templates written directly to your folder.</p>
-        </div>
-
-        <div class="andre-rec">
-          <strong>What Andre recommends:</strong>&nbsp; Don't skip Phase 0. It takes 5 minutes and prevents 90% of confusion later. The rest is just copy, paste, repeat.
-        </div>
-
-        <!-- Checklist items for Phase 0 -->
-        <div style="margin-top: 1.25rem;">
-          <div class="step-card" id="card-p0-1">
-            <div class="step-card-header" onclick="toggleCard('p0-1')">
-              <div class="step-checkbox" id="chk-p0-1" onclick="toggleCheck(event,'p0-1')">
-                <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div class="step-card-title" id="title-p0-1">I have a Claude account</div>
-              <span class="step-chevron">▾</span>
-            </div>
-            <div class="step-card-body">
-              <p class="step-instructions">Go to <strong>claude.ai</strong> and sign up for free. You don't need a paid plan to get started — the free plan works fine for this setup.</p>
-            </div>
-          </div>
-
-          <div class="step-card" id="card-p0-2">
-            <div class="step-card-header" onclick="toggleCard('p0-2')">
-              <div class="step-checkbox" id="chk-p0-2" onclick="toggleCheck(event,'p0-2')">
-                <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div class="step-card-title" id="title-p0-2">I've chosen my setup path (claude.ai or Claude Code)</div>
-              <span class="step-chevron">▾</span>
-            </div>
-            <div class="step-card-body">
-              <p class="step-instructions"><strong>claude.ai:</strong> Go to claude.ai, create a new Project, paste CLAUDE.md as Project Instructions, and upload the <strong>prompts/</strong> files as knowledge.<br/><br/><strong>Claude Code:</strong> Open this folder with <code>claude /path/to/zero-to-claude</code>. CLAUDE.md loads automatically.</p>
-            </div>
-          </div>
-
-          <div class="step-card" id="card-p0-3">
-            <div class="step-card-header" onclick="toggleCard('p0-3')">
-              <div class="step-checkbox" id="chk-p0-3" onclick="toggleCheck(event,'p0-3')">
-                <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div class="step-card-title" id="title-p0-3">Claude is set up and I'm ready to start</div>
-              <span class="step-chevron">▾</span>
-            </div>
-            <div class="step-card-body">
-              <p class="step-instructions">Claude should greet you and ask whether you're using claude.ai or Claude Code — that's its first question to branch the session correctly. If it doesn't say anything, type <em>"hi, let's get started"</em> and it'll kick off from there.</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ────────────── PHASE 1 ────────────── -->
-      <section class="section" id="phase1">
-        <div class="section-header">
-          <div class="section-number">1</div>
-          <div>
-            <div class="section-title">Your Context</div>
-            <div class="section-subtitle">6 prompts · answer directly or use another AI tool · Claude builds your profile as you go</div>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <div class="info-card-title">How this phase works</div>
-          <p>Claude gives you one prompt at a time. You can answer directly — just talk through it in your own words. Or, if you already use another AI tool (ChatGPT, Gemini, etc.) and have a history there, paste the prompt in and bring back what it says about you. Either way works. Claude builds your profile from whatever you share.</p>
-        </div>
-
-        <div class="tip-box">
-          <span class="tip-icon">💡</span>
-          <span>You can use the prompts below as a reference. If an answer feels thin or vague, ask for more detail — or just add it yourself in your own words.</span>
-        </div>
-
-        <!-- Prompt 1 -->
-        <div class="step-card" id="card-p1-1" style="margin-top:1.25rem">
-          <div class="step-card-header" onclick="toggleCard('p1-1')">
-            <div class="step-checkbox" id="chk-p1-1" onclick="toggleCheck(event,'p1-1')">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="step-card-title" id="title-p1-1">Prompt 1 — Who I Am</div>
-            <span class="step-chevron">▾</span>
-          </div>
-          <div class="step-card-body">
-            <p class="step-instructions">This prompt covers who you are professionally — your name, role, background, and personality. It's the foundation everything else builds on. Answer directly or paste it into another AI and bring back the answer.</p>
-            <div class="prompt-box">
-              <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
-                <button class="copy-btn" onclick="copyPrompt(this, 'prompt1')">⎘ Copy prompt</button>
-              </div>
-              <div class="prompt-text" id="prompt1">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
-
-1. Who am I professionally — name, role, type of work, and whether I'm employed, freelance, or running my own business?
-2. How would you describe my background and what I actually do, in 3–5 sentences?
-3. What have I said makes me different or strongest at what I do? And how would you describe my personality in 2–3 sentences?</div>
-            </div>
-            <div class="tip-box">
-              <span class="tip-icon">↩</span>
-              <span>Once you have an answer, read it carefully. If something feels wrong or incomplete, correct it before sharing it with Claude.</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Prompt 2 -->
-        <div class="step-card" id="card-p1-2">
-          <div class="step-card-header" onclick="toggleCard('p1-2')">
-            <div class="step-checkbox" id="chk-p1-2" onclick="toggleCheck(event,'p1-2')">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="step-card-title" id="title-p1-2">Prompt 2 — My Goals &amp; Desires</div>
-            <span class="step-chevron">▾</span>
-          </div>
-          <div class="step-card-body">
-            <p class="step-instructions">This one captures what you're working toward — professional goals, personal aspirations, what success means to you, and what you want more of.</p>
-            <div class="prompt-box">
-              <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
-                <button class="copy-btn" onclick="copyPrompt(this, 'prompt2')">⎘ Copy prompt</button>
-              </div>
-              <div class="prompt-text" id="prompt2">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
-
-1. What are my main professional goals right now?
-2. What problems am I actively trying to solve, and what does success look like in the next 1–2 years?
-3. What have I said I want more of — clients, income, time, visibility, something else?</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Prompt 3 -->
-        <div class="step-card" id="card-p1-3">
-          <div class="step-card-header" onclick="toggleCard('p1-3')">
-            <div class="step-checkbox" id="chk-p1-3" onclick="toggleCheck(event,'p1-3')">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="step-card-title" id="title-p1-3">Prompt 3 — What I Don't Like</div>
-            <span class="step-chevron">▾</span>
-          </div>
-          <div class="step-card-body">
-            <p class="step-instructions">The most underrated prompt. This is where Claude learns what <em>not</em> to do — your pet peeves, corrections you've made, formats you hate. This is what makes it feel like it really knows you.</p>
-            <div class="prompt-box">
-              <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
-                <button class="copy-btn" onclick="copyPrompt(this, 'prompt3')">⎘ Copy prompt</button>
-              </div>
-              <div class="prompt-text" id="prompt3">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
-
-1. What have I explicitly asked you not to do — any "stop doing X" or "never do Y" corrections?
-2. What feedback have I given on your responses — too long, wrong tone, not my style, over-explained?
-3. Are there specific words, phrases, or formats I've asked you to avoid?</div>
-            </div>
-            <div class="andre-rec">
-              <strong>What Andre recommends:</strong>&nbsp; Don't rush this one. If the answer feels thin, dig deeper — ask: <em>"What's one time I pushed back on one of your responses? What did I say?"</em> That usually unlocks better answers.
-            </div>
-          </div>
-        </div>
-
-        <!-- Prompt 4 -->
-        <div class="step-card" id="card-p1-4">
-          <div class="step-card-header" onclick="toggleCard('p1-4')">
-            <div class="step-checkbox" id="chk-p1-4" onclick="toggleCheck(event,'p1-4')">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="step-card-title" id="title-p1-4">Prompt 4 — How I Work</div>
-            <span class="step-chevron">▾</span>
-          </div>
-          <div class="step-card-body">
-            <p class="step-instructions">How you communicate, what tools you use, your natural writing voice, how you like responses structured. This is what makes Claude feel like a good working partner.</p>
-            <div class="prompt-box">
-              <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
-                <button class="copy-btn" onclick="copyPrompt(this, 'prompt4')">⎘ Copy prompt</button>
-              </div>
-              <div class="prompt-text" id="prompt4">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
-
-1. How do I like responses formatted — bullet points, paragraphs, headers, short, long?
-2. What tone works best — casual, direct, formal, warm, blunt?
-3. What's my natural writing voice like when I write emails, posts, or messages?
-4. What tools and apps do I use regularly?</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Prompt 5 -->
-        <div class="step-card" id="card-p1-5">
-          <div class="step-card-header" onclick="toggleCard('p1-5')">
-            <div class="step-checkbox" id="chk-p1-5" onclick="toggleCheck(event,'p1-5')">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="step-card-title" id="title-p1-5">Prompt 5 — My Work Context</div>
-            <span class="step-chevron">▾</span>
-          </div>
-          <div class="step-card-body">
-            <p class="step-instructions">Your work context — what you do, who you work with, what a typical engagement looks like, and how you find new work. This applies whether you're employed, freelance, or running your own thing.</p>
-            <div class="prompt-box">
-              <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
-                <button class="copy-btn" onclick="copyPrompt(this, 'prompt5')">⎘ Copy prompt</button>
-              </div>
-              <div class="prompt-text" id="prompt5">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
-
-My Work Context
-
-1. What do I do and what do I offer — describe my work clearly?
-2. Who do I work for or with, and what do they typically need from me?
-3. What does a typical project or engagement look like — start to finish?
-4. How do I find or attract new work? What platforms or channels am I active on?</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Prompt 6 -->
-        <div class="step-card" id="card-p1-6">
-          <div class="step-card-header" onclick="toggleCard('p1-6')">
-            <div class="step-checkbox" id="chk-p1-6" onclick="toggleCheck(event,'p1-6')">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="step-card-title" id="title-p1-6">Prompt 6 — My Projects &amp; Tasks</div>
-            <span class="step-chevron">▾</span>
-          </div>
-          <div class="step-card-body">
-            <p class="step-instructions">This one builds your actual work folders inside Claude. After you paste the answer back, Claude will create a dedicated folder for each of your recurring tasks — pre-loaded with everything it knows about how you do that work.</p>
-            <div class="prompt-box">
-              <div class="prompt-box-header">
-                <span class="prompt-box-label">Copy → use directly or paste into another AI</span>
-                <button class="copy-btn" onclick="copyPrompt(this, 'prompt6')">⎘ Copy prompt</button>
-              </div>
-              <div class="prompt-text" id="prompt6">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
-
-1. What are the main types of work I do regularly? List each one separately.
-2. For each — what does it involve from start to finish?
-3. Are there templates, frameworks, or processes I use for any of these?
-4. What projects am I currently working on — specific ongoing initiatives, not just recurring tasks?
-
-Structure your answer like this:
-
-RECURRING TASKS:
-- [Task name]: [What it involves, how I approach it, any tools or templates I use]
-
-CURRENT PROJECTS:
-- [Project name]: [What it is, where it stands, what the goal is]
-
-TOOLS &amp; DOCUMENTS:
-- [Tool or doc]: [What I use it for]</div>
-            </div>
-            <div class="tip-box">
-              <span class="tip-icon">📁</span>
-              <span>After you share this answer with Claude, it will build your project folders automatically. In Claude Code, you'll see the file structure appear in your folder. In claude.ai, Claude will describe the structure it's creating.</span>
-            </div>
-            <div class="folder-tree">
-              <span class="dir">📁 my-brain/</span><br>
-              &nbsp;&nbsp;<span class="dir">📁 projects/</span><br>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="dir">📁 resume-reviews/</span><br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 context.md</span> <span class="comment">← your approach, standards, templates</span><br>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="dir">📁 contract-reviews/</span><br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 context.md</span><br>
-              &nbsp;&nbsp;&nbsp;&nbsp;<span class="dir">📁 [your other tasks]/</span><br>
-              &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="file">📄 context.md</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- ────────────── PHASE 2 ────────────── -->
-      <section class="section" id="phase2">
-        <div class="section-header">
-          <div class="section-number">2</div>
-          <div>
-            <div class="section-title">Fill the Gaps</div>
-            <div class="section-subtitle">A few quick questions Claude will ask you directly</div>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <div class="info-card-title">What happens here</div>
-          <p>After all 6 prompts, Claude will ask you a handful of questions that only you can answer — like your website, what you most want help with daily, and how you like responses. Answer them conversationally, one at a time. No copy-pasting needed.</p>
-        </div>
-
-        <div class="info-card" style="margin-top:0.75rem">
-          <div class="info-card-title">What Claude will ask</div>
-          <ul class="info-list">
-            <li>What's your website URL?</li>
-            <li>What do you most want Claude to help you with day-to-day?</li>
-            <li>Anything about AI that's annoyed you or hasn't worked?</li>
-            <li>Do you prefer short punchy answers or detailed thorough ones?</li>
-            <li>Anything else Claude should know that we haven't covered?</li>
-          </ul>
-        </div>
-
-        <div class="step-card" style="margin-top:1.25rem" id="card-p2-1">
-          <div class="step-card-header" onclick="toggleCard('p2-1')">
-            <div class="step-checkbox" id="chk-p2-1" onclick="toggleCheck(event,'p2-1')">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="step-card-title" id="title-p2-1">Phase 2 complete — I answered Claude's questions</div>
-            <span class="step-chevron">▾</span>
-          </div>
-          <div class="step-card-body">
-            <p class="step-instructions">Just answer in plain language. No right or wrong answers. Claude will update your profile files as you go.</p>
-          </div>
-        </div>
-      </section>
-
-      <!-- ────────────── PHASE 3 ────────────── -->
-      <section class="section" id="phase3">
-        <div class="section-header">
-          <div class="section-number">3</div>
-          <div>
-            <div class="section-title">The Wow Test</div>
-            <div class="section-subtitle">3 real tasks — watch how different it feels</div>
-          </div>
-        </div>
-
-        <div class="info-card">
-          <div class="info-card-title">Why this matters</div>
-          <p>This is the moment everything clicks. You'll ask Claude to do 3 tasks you actually do in your work. The goal isn't just to see if it works — it's to feel the difference between a Claude that knows you and one that doesn't. That feeling is what you'll get every day from now on.</p>
-        </div>
-
-        <div class="wow-test">
-          <div class="wow-number">1</div>
-          <div class="wow-content">
-            <div class="wow-title">The Personalized Message</div>
-            <div class="wow-desc">Claude drafts a message for you unprompted — a follow-up, client note, or quick pitch in your actual voice. It won't ask what you do, who your clients are, or how you like things written. It already knows.</div>
-          </div>
-        </div>
-        <div class="wow-test">
-          <div class="wow-number">2</div>
-          <div class="wow-content">
-            <div class="wow-title">The Agent</div>
-            <div class="wow-desc">Claude invokes one of the custom agents it built for you — a persona or perspective tailored to your dominant use case. Watch it respond as someone deeply familiar with your type of work.</div>
-          </div>
-        </div>
-        <div class="wow-test">
-          <div class="wow-number">3</div>
-          <div class="wow-content">
-            <div class="wow-title">The Skill</div>
-            <div class="wow-desc">Claude triggers one of the skills it built for a task you do regularly. You say a single phrase — it executes a full, structured response built around your specific workflow.</div>
-          </div>
-        </div>
-
-        <div class="step-card" style="margin-top:1.25rem" id="card-p3-1">
-          <div class="step-card-header" onclick="toggleCard('p3-1')">
-            <div class="step-checkbox" id="chk-p3-1" onclick="toggleCheck(event,'p3-1')">
-              <svg width="11" height="9" viewBox="0 0 11 9" fill="none"><path d="M1 4L4 7.5L10 1" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </div>
-            <div class="step-card-title" id="title-p3-1">Setup complete — Claude knows me 🎉</div>
-            <span class="step-chevron">▾</span>
-          </div>
-          <div class="step-card-body">
-            <p class="step-instructions">You're done. From now on, every Claude session in this project starts with full context about who you are, how you work, and what you do — plus agents, skills, and templates built around your actual work. No more re-explaining yourself.</p>
-            <div class="andre-rec" style="margin-top:0.75rem">
-              <strong>What Andre recommends:</strong>&nbsp; Revisit your <strong>my-brain/</strong> files every few months as your business evolves. The more current it stays, the more useful Claude becomes.
-            </div>
-          </div>
-        </div>
-      </section>
-
-    </div><!-- /container -->
-  </main>
-
-  <footer>
-    <div class="container">
-      <div class="footer-logo">Zero to Claude</div>
-      <div class="footer-sub">
-        A framework by <a href="https://andreottoni.com" target="_blank">Andre Ottoni</a>
-        &nbsp;·&nbsp; Built for humans, not engineers
+    <div class="tracks">
+      <div class="track-card">
+        <span class="tag">Solopreneur</span>
+        <h3>Just you</h3>
+        <p>A personal profile, agents and skills built around how you actually work, and templates for what you make most.</p>
+      </div>
+      <div class="track-card">
+        <span class="tag">SMB</span>
+        <h3>Your team</h3>
+        <p>The same idea, scoped to the business — a shared profile plus agents built around the specific functions where you need AI help most.</p>
       </div>
     </div>
-  </footer>
 
-  <script>
-    // ── State ──
-    const TOTAL_STEPS = 10;
-    const checkStates = {};
+    <section>
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="step-num">1</div>
+          <p><strong>Get the folder.</strong> Clone this repo or download it as a ZIP.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">2</div>
+          <p><strong>Open it in Claude.</strong> Claude Code, Cowork, or a new claude.ai Project — <code>CLAUDE.md</code> works the same way in each.</p>
+        </div>
+        <div class="step">
+          <div class="step-num">3</div>
+          <p><strong>Say "let's go."</strong> Claude asks two quick questions — which track, and whether it can write files here — then runs the whole setup with you: a few short rounds of questions, then a personal or company "brain," plus agents, skills, and templates built around your real work.</p>
+        </div>
+      </div>
+      <div class="note">This page is just a preview. Claude tracks your progress in the conversation itself — there's nothing to check off here.</div>
+    </section>
 
-    // ── Toggle accordion ──
-    function toggleCard(id) {
-      const card = document.getElementById('card-' + id);
-      card.classList.toggle('open');
-    }
-
-    // ── Toggle checkbox ──
-    function toggleCheck(event, id) {
-      event.stopPropagation();
-      const chk = document.getElementById('chk-' + id);
-      const title = document.getElementById('title-' + id);
-      const card = document.getElementById('card-' + id);
-      checkStates[id] = !checkStates[id];
-
-      if (checkStates[id]) {
-        chk.classList.add('checked');
-        title.classList.add('checked');
-        card.classList.add('done-card');
-        card.classList.remove('active-card');
-      } else {
-        chk.classList.remove('checked');
-        title.classList.remove('checked');
-        card.classList.remove('done-card');
-      }
-      updateProgress();
-    }
-
-    // ── Progress ──
-    function updateProgress() {
-      const done = Object.values(checkStates).filter(Boolean).length;
-      const pct = Math.round((done / TOTAL_STEPS) * 100);
-      document.getElementById('progress-fill').style.width = pct + '%';
-      document.getElementById('progress-pct').textContent = done + ' of ' + TOTAL_STEPS + ' steps done';
-
-      // Update phase dots
-      const p0Done = ['p0-1','p0-2','p0-3'].filter(k => checkStates[k]).length;
-      const p1Done = ['p1-1','p1-2','p1-3','p1-4','p1-5','p1-6'].filter(k => checkStates[k]).length;
-      const p2Done = checkStates['p2-1'] ? 1 : 0;
-      const p3Done = checkStates['p3-1'] ? 1 : 0;
-
-      setDot('dot-0', p0Done === 3, p0Done > 0 && p0Done < 3);
-      setDot('dot-1', p1Done === 6, p1Done > 0 && p1Done < 6);
-      setDot('dot-2', p2Done === 1, false);
-      setDot('dot-3', p3Done === 1, false);
-    }
-
-    function setDot(id, done, active) {
-      const dot = document.getElementById(id);
-      dot.classList.remove('done', 'active');
-      if (done) {
-        dot.classList.add('done');
-        dot.querySelector('.step-dot-circle').textContent = '✓';
-      } else if (active) {
-        dot.classList.add('active');
-      }
-    }
-
-    // ── Copy prompt ──
-    function copyPrompt(btn, promptId) {
-      const text = document.getElementById(promptId).textContent;
-      navigator.clipboard.writeText(text).then(() => {
-        btn.classList.add('copied');
-        btn.textContent = '✓ Copied!';
-        setTimeout(() => {
-          btn.classList.remove('copied');
-          btn.textContent = '⎘ Copy prompt';
-        }, 2000);
-      }).catch(() => {
-        // Fallback
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.position = 'fixed';
-        ta.style.opacity = '0';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-        btn.classList.add('copied');
-        btn.textContent = '✓ Copied!';
-        setTimeout(() => {
-          btn.classList.remove('copied');
-          btn.textContent = '⎘ Copy prompt';
-        }, 2000);
-      });
-    }
-
-    // ── Scroll to section ──
-    function scrollToSection(id) {
-      document.getElementById(id).scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    // ── Auto-open first card of each phase ──
-    document.addEventListener('DOMContentLoaded', () => {
-      toggleCard('p0-1');
-    });
-  </script>
+    <footer>
+      Built with the Zero to Claude framework — <a href="https://andreottoni.com" target="_blank" rel="noopener">andreottoni.com</a>
+    </footer>
+  </div>
 </body>
 </html>
