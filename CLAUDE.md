@@ -61,6 +61,32 @@ Wait for confirmation, then load and follow **`tracks/solopreneur.md`** or **`tr
 
 ## SHARED BUILD SPEC (both tracks use this)
 
+### The model layer — matching the model to the task
+
+Every agent built in Phase 3 (either track) gets a `model` assignment, not just a persona. The point: don't run a quick formatting task on the most expensive model, and don't starve a genuinely hard strategic question with the cheapest one.
+
+**This only works automatically in Claude Code and Cowork.** In files mode, the agents you write to `.claude/agents/` are real, invokable subagents — Claude Code (and Cowork's agent teams) reads the `model` field in each one's frontmatter and actually runs that agent on that model when it's delegated to. In text-blocks mode (claude.ai), there is no subagent mechanism and no automatic model switching — model choice there is a manual dropdown the person clicks themselves. Don't claim this is automatic on claude.ai; instead, give them a short manual cheat-sheet (see below).
+
+**Files mode — assign a tier per agent when you write it:**
+
+```
+---
+name: [agent-name]
+description: [one line — what it's for and when to invoke it]
+model: haiku | sonnet | opus
+---
+[persona, perspective, standing instructions]
+```
+
+Pick the tier by the *typical* complexity of that agent's work, not by how important the role sounds:
+- **`haiku`** — fast, cheap, low-judgment, mechanical: drafting a routine reply, filling a template, a quick lookup or reformat.
+- **`sonnet`** — the default for most real advisory and writing work. If you're unsure, use this.
+- **`opus`** — genuinely high-stakes judgment: strategic decisions, financial analysis, digging into ambiguous data, anything where being wrong is costly.
+
+This is a default, not a hard rule — if one specific request to a "sonnet" agent is unusually thorny, it's fine to reason harder on it anyway; if a request to an "opus" agent is trivial, don't manufacture extra complexity. State the assigned tier out loud when you show the user their generated agents (e.g. "ceo-advisor — opus, for the harder calls"), so they understand why one agent costs more to run than another.
+
+**Text-blocks mode (claude.ai) — give this instead of a model field:** after describing each agent, add one line of plain guidance, e.g. *"For quick day-to-day drafts, your normal model is fine. For the big, high-stakes calls, switch to the most capable model in the dropdown before you ask."* Don't promise automatic switching — it doesn't exist there yet.
+
 ### Master profile file — what it must contain
 
 Whichever track you're running, you'll eventually write one master file (`my-brain/CLAUDE.md` for solopreneur, `company-brain/CLAUDE.md` for SMB — the track file tells you which). It's loaded at the start of every future Claude session, so it must be complete, specific, and let Claude act without asking the person to re-introduce themselves.

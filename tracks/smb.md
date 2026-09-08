@@ -68,27 +68,27 @@ Write `company-brain/CLAUDE.md` using the **master file spec in `CLAUDE.md`** �
 
 For each of the `priority_functions` identified in Round 4 (2-4 of them), build:
 
-1. **An agent** — a business-function advisor Claude inhabits when working on that function. Name, short description, perspective, standing instructions, and — critically — grounded in the *specific bottleneck* they described for that function, not a generic version.
+1. **An agent** — a business-function advisor Claude inhabits when working on that function. Name, short description, perspective, standing instructions, a model tier (per the **model layer spec in `CLAUDE.md`**), and — critically — grounded in the *specific bottleneck* they described for that function, not a generic version.
 2. **A skill** — a triggered helper for the most recurring task in that function.
 3. **A template** — a starting-point document for that function's most common deliverable.
 
-**Files mode:** write directly — agents → `.claude/agents/[function].md`, skills → `.claude/skills/[function].md`, templates → `templates/[function].md`.
-**Text-blocks mode:** output each as a formatted block to copy into Project Instructions or save separately.
+**Files mode:** write directly — agents → `.claude/agents/[function].md` (with `name`/`description`/`model` frontmatter, per the model layer spec — these become real subagents Claude can delegate to, so a heavier function like finance genuinely runs on a stronger model), skills → `.claude/skills/[function].md`, templates → `templates/[function].md`.
+**Text-blocks mode:** output each as a formatted block to copy into Project Instructions or save separately, plus the one-line manual model-switching note from the model layer spec.
 
-Use this as a starting point for naming and shape — adapt freely to what they actually described, don't force a function into a mold that doesn't fit:
+Use this as a starting point for naming, shape, and model tier — adapt freely to what they actually described, don't force a function into a mold that doesn't fit:
 
-| Function | Agent | Skill trigger | Template |
-|----------|-------|--------------|----------|
-| Leadership / CEO | ceo-advisor | "help me think through this decision" | decision-memo |
-| Ops | ops-manager | "break this process down" | sop / runbook |
-| Marketing | marketing-strategist | "brief this campaign" | content-brief / caption / newsletter |
-| Sales | sales-coach | "prep me for this call" | pitch / follow-up / proposal |
-| HR / People | hr-partner | "help me handle this people issue" | job-post / feedback-doc / policy-note |
-| Finance | finance-analyst | "sanity-check these numbers" | budget-summary / forecast-note |
-| Customer support | support-lead | "draft this response" | reply-template / escalation-note |
-| Data / reporting | data-analyst | "help me read this data" | analysis-summary |
+| Function | Agent | Model | Skill trigger | Template |
+|----------|-------|-------|--------------|----------|
+| Leadership / CEO | ceo-advisor | opus | "help me think through this decision" | decision-memo |
+| Ops | ops-manager | sonnet | "break this process down" | sop / runbook |
+| Marketing | marketing-strategist | sonnet | "brief this campaign" | content-brief / caption / newsletter |
+| Sales | sales-coach | sonnet | "prep me for this call" | pitch / follow-up / proposal |
+| HR / People | hr-partner | sonnet | "help me handle this people issue" | job-post / feedback-doc / policy-note |
+| Finance | finance-analyst | opus | "sanity-check these numbers" | budget-summary / forecast-note |
+| Customer support | support-lead | haiku | "draft this response" | reply-template / escalation-note |
+| Data / reporting | data-analyst | opus | "help me read this data" | analysis-summary |
 
-After generating, show a clean summary — names and one-line descriptions of each agent, skill, template, tied back to the bottleneck each one addresses. Then say:
+After generating, show a clean summary — names, model tier, and one-line descriptions of each agent, skill, template, tied back to the bottleneck each one addresses. Then say:
 
 > *"Here's what I built for you. Each one is aimed at the specific bottleneck you described — not a generic tool. Let me show you how they work."*
 
@@ -122,7 +122,7 @@ Then immediately do the first task, unprompted:
 
 **Test 1 — The Personalized Message.** Draft a short message on their behalf tied to the real business (a client note, a team update, a quick pitch), in their voice, using real context. Don't ask permission — write it and show it. Then: *"I wrote that without asking you a single thing. Does it sound like your business?"*
 
-**Test 2 — The Agent.** Invoke the most relevant function agent you built. *"I built a [function] advisor grounded in the bottleneck you described. Let me show you."* Step into that voice for a realistic scenario from that function. Then: *"That's your [agent name]. Notice anything different?"*
+**Test 2 — The Agent.** *"I built a [function] advisor grounded in the bottleneck you described, running on [model tier]. Let me show you."* **Files mode:** actually delegate to that subagent for a realistic scenario from that function, so it runs for real on its assigned model. **Text-blocks mode:** step into that voice yourself, since there's no subagent to delegate to. Then: *"That's your [agent name]. Notice anything different?"*
 
 **Test 3 — The Skill.** *"You said [bottleneck] is a real pain point. Say '[trigger phrase]' and watch what happens."* Wait for the phrase, execute the skill as designed. Then: *"That's your [skill name] skill. One phrase, every time."*
 
