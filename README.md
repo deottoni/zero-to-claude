@@ -25,7 +25,7 @@ You don't need to pick a track yourself — Claude asks at the start and takes i
    - **Claude Code** — open the folder in your terminal (`claude /path/to/zero-to-claude`)
    - **Cowork** — open the folder as a workspace
    - **claude.ai** (browser or app) — create a new Project, paste the entire contents of `CLAUDE.md` into the Project Instructions, and upload everything in `/prompts` and `/tracks` as Project knowledge
-3. Say "hi" or "let's go." Claude reads `CLAUDE.md`, asks two quick questions (which track, and whether it can write files here), and runs the rest of the setup with you.
+3. Say "hi" or "let's go." Claude reads `CLAUDE.md`, asks one quick question (which track), figures out on its own whether it can save files in this environment, and runs the rest of the setup with you.
 
 That's it. Claude tracks where you are in the process itself — there's nothing to check off anywhere else.
 

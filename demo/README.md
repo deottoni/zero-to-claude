@@ -1,38 +1,67 @@
 # Demo Mode — for Andre only
 
-This folder is not part of what a client gets. It's how you run a confident, repeatable live demo of Zero to Claude — the **real flow**, with a **made-up client** answering, so nothing here is a mockup and nothing here is a real person's data.
+## Instructions for Claude: you were sent here because the person running this said something like "run the demo." Follow this file, not the normal `CLAUDE.md` flow. Everything below is written for you to execute, not for a human to read and act on step by step — the whole point is that Andre shouldn't have to remember commands, folders, or which file to open.
 
-## Why this exists
+This is the **real flow**, with a **made-up client** answering, so nothing here is a mockup and nothing here is a real person's data. It exists so Andre can rehearse or present confidently without needing a real client's real answers on the spot, and without having to think about setup mechanics himself.
 
-The framework already has a built-in "wow test" at the end of each track — that's the actual payoff moment. What was missing was a safe way to *get there* live, in front of someone, without needing a real client's real answers on the spot. This solves that: two ready-made personas you can paste in, plus a run-of-show sheet so you're not just narrating a wall of chat text.
+---
 
-## How to run it
+## Step 1 — ask how to run it
 
-**Always open Claude Code at the repo root (`zero-to-claude/`), not this `/demo` folder.** `CLAUDE.md` — the file Claude Code reads automatically — lives at the root. `/demo` has no entry point of its own; it's just where the persona files live for you to copy from in a separate window while the session runs at the root.
+Ask, in one message:
 
-There are two ways to run it, depending on whether you want to show real files being created:
+> *"Quick setup for the demo: should I actually create real files and folders — the full effect — or just play it out here in the chat with nothing saved anywhere? And which one do you want to run: the solopreneur (Jordan Reyes) or the small business (Bright Leaf Coffee Co.)?"*
 
-### Option A — zero footprint (default, safest, works in your real cloned repo)
+Wait for both answers before doing anything else.
 
-Open the real repo in Claude Code as usual and say "let's go." When Claude asks Phase 0's second question ("can I create and edit files here?"), **answer no** — that forces text-blocks mode, so Claude prints everything in the chat instead of writing to disk. Nothing gets created, nothing to clean up, no risk to the repo you'd hand a real client. The one thing you lose: the "watch it create real files/folders live" beat, and the agent in the Wow Test becomes a roleplay rather than a real subagent delegation.
+### If they want real files
 
-### Option B — real files, for when you want to show the file-creation moment
+Run this yourself (you have shell access — just do it, don't ask them to run anything):
 
-Copy the repo to a scratch folder first, and run the demo there instead of your real clone. Naming it with today's date makes it obvious later which ones are safe to delete:
 ```
-cp -r zero-to-claude ~/Desktop/demo-$(date +%m-%d-%y)
-cd ~/Desktop/demo-$(date +%m-%d-%y)
+cp -r [this repo's root folder] ~/Desktop/demo-$(date +%m-%d-%y)
 ```
-Open that copy in Claude Code and answer **yes** to the file-access question. This gets you the full effect — real folders appearing, real subagent delegation with its actual model tier in the Wow Test. When you're done, just delete the dated folder — anything named `demo-*` on your Desktop is always safe to remove.
 
-### Either way
+Then tell them plainly: *"Copied to `~/Desktop/demo-MM-DD-YY` — I'll do everything from there, your real repo is untouched. Safe to delete that whole folder when we're done."* From this point on, treat that copied path as the project root for every file you read or write for the rest of this session — use full paths to it, don't assume your working directory moved. Set `output_mode = files`.
 
-1. Open the **[rundown sheet](https://claude.ai/code/artifact/cbcf8b0b-8a44-4ca6-9293-c283f149cc4b)** on a second screen or window — it's your run-of-show while you talk. Toggle Solopreneur/SMB at the top to match whichever persona you're running.
-2. Answer Phase 0's track question: **solopreneur** → use `personas/solopreneur-demo.md`, or **team/small business** → use `personas/smb-demo.md`.
-3. For each round, open the matching persona file and paste that round's answer block when Claude gives you the prompt. Don't read the whole file live — it's pre-split by round so you just copy the next block each time.
-4. Let the Wow Test run for real — this is the actual product working, not a script for that part.
+### If they want chat-only (no files)
 
-## What's in here
+Say so back to confirm: *"Got it — nothing gets saved, this all just plays out here."* Set `output_mode = text-blocks` and never call a file-write tool for the rest of the demo, even though you technically could. This is safe to run directly in the real repo, exactly where you are right now.
+
+---
+
+## Step 2 — load the track and the persona
+
+Based on which persona they picked:
+- **Jordan Reyes** → track = solopreneur → persona file `demo/personas/solopreneur-demo.md`
+- **Bright Leaf Coffee Co.** → track = smb → persona file `demo/personas/smb-demo.md`
+
+Read the whole persona file now. Then say:
+
+> *"Rundown's here if you want it on a second screen: [Live Demo Rundown](https://claude.ai/code/artifact/cbcf8b0b-8a44-4ca6-9293-c283f149cc4b) — toggle it to [solopreneur/SMB]. Ready when you are — just say 'go' and I'll start."*
+
+Wait for them to say go.
+
+---
+
+## Step 3 — run the real track, feeding yourself the persona's answers
+
+Follow `CLAUDE.md`'s shared spec and `tracks/solopreneur.md` or `tracks/smb.md` **exactly as written**, with two differences from a normal run:
+
+1. **Don't run Phase 0's question or its self-detection step again.** Track and `output_mode` are already decided from Step 1 above — and Step 1's answer wins even if it disagrees with what your own self-detection would conclude (e.g. they may ask for chat-only even though you technically could write files, precisely so nothing gets saved). Skip straight into the welcome beat and Round 1.
+2. **Don't wait for the human to type or paste an answer to each round.** When the track file says to give a round's prompt, give it out loud as normal (for narration), then immediately answer it yourself using that round's block from the persona file you already read — as if the persona had just said it. **Then pause and wait for the presenter to say "next" or "go" before moving to the following round** — they need room to narrate over the rundown sheet, so don't auto-chain through every round back to back.
+
+Everything else runs for real: file writes (if in files mode), the mandatory confirmation gate, the Phase 3 build with real model tiers, and the Wow Test. Don't script or shortcut the Wow Test — that's the actual product working, and it should run exactly as `tracks/*.md` defines it.
+
+---
+
+## Step 4 — after the Wow Test
+
+Give the normal completion message from `CLAUDE.md`. Then, only if you ran in files mode, remind them once: *"Everything's in `~/Desktop/demo-MM-DD-YY` — delete that folder whenever, your real repo was never touched."*
+
+---
+
+## Reference — what's in this folder
 
 | File | What it's for |
 |------|---------------|
