@@ -128,4 +128,31 @@ Depois faça a primeira tarefa imediatamente, sem esperar:
 
 Depois dos 3: *"Desses 3 — algum pareceu que realmente entendia a empresa? Alguma coisa pareceu estranha?"*
 
-Se algo estiver estranho, corrija o arquivo relevante. Caso contrário, dê a **mensagem de conclusão de `CLAUDE.md`**, preenchendo as quantidades reais do que foi construído.
+Se algo estiver estranho, corrija o arquivo relevante. Caso contrário, siga para a Fase 4 abaixo.
+
+---
+
+## FASE 4: O Diagrama do Cérebro
+
+Diga:
+> *"Mais uma coisa — quero te mostrar uma coisa. Uma imagem ao vivo de tudo que a gente acabou de construir para a empresa, tudo conectado."*
+
+Pergunte:
+> *"Uma rápida — a empresa tem um site? Se tiver, manda o link que eu combino isso com a cara de vocês de verdade."*
+
+- **Se a pessoa der uma URL:** use WebFetch para acessar o site — cores reais, nomes/combinação de fontes, e um logo se conseguir encontrar. Se `output_mode = files`, salve o que encontrar numa nova pasta `design-system/` como arquivos de verdade, não só guardado de memória para esta sessão. Se o WebFetch não estiver disponível nesta sessão, não invente a marca da empresa nem trave nisso — pule direto para o padrão abaixo.
+- **Se a pessoa disser que não (ou se o WebFetch não estiver disponível):** use este tema padrão genérico — fundo `oklch(0.13 0.005 260)`, painel `oklch(0.17 0.005 260)`, borda `oklch(0.27 0.006 260)`, texto `oklch(0.95 0 0)`, texto secundário `oklch(0.66 0.5 0.005 260)`, cor de destaque `oklch(0.75 0.14 230)`, títulos em Outfit, corpo em DM Sans — mais um pequeno crédito no rodapé: *"Created from Zero to Claude | by andreottoni.com."*
+
+Construa e publique isso como um Artifact de verdade. Use HTML/CSS real para o layout da página — flexbox/grid, espaçamento de verdade — e SVG inline só para pequenos ícones e algum gráfico simples dentro de um card. Nunca calcule coordenadas de layout de página à mão em SVG bruto — é isso que quebra o alinhamento.
+
+Organize o diagrama em três zonas de borda tracejada, agrupadas pelo que cada coisa *faz* pela empresa — não por compartilhado-vs-pessoal:
+- **KNOW** (saber) — Knowledge/Context, Memory, Connections
+- **BE** (ser) — Preferences, Design System
+- **DO** (fazer) — Agents, Skills, Tools
+
+Cada card recebe um selo com ícone, um título, um divisor, e 2-4 exemplos curtos em bullets — nunca um bloco de texto corrido. Cinco desses são saídas reais da configuração que acabou de rodar, então dê a eles uma borda sólida e sem legenda extra: Knowledge/Context, Preferences, Design System, Agents, Skills. Os outros três são partes reais do quadro, mas nada que essa configuração monte automaticamente — dê a eles uma borda tracejada mais uma legenda curta em itálico: Memory ("cresce conforme vocês usam"), Connections ("adicionem conforme forem precisando"), Tools ("já vem com a plataforma de vocês"). Adicione uma legenda pequena no rodapé explicando o que borda sólida vs. tracejada significa.
+
+Depois de publicado, entregue o link:
+> *"Aqui está o cérebro da empresa, visualizado — [link]. Tudo que a gente construiu, e como se conecta, nas cores de vocês."*
+
+Depois dê a **mensagem de conclusão de `CLAUDE.md`**, preenchendo as quantidades reais do que foi construído.

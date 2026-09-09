@@ -146,6 +146,7 @@ Espere a confirmação antes de seguir para a fase de construção. Se a pessoa 
 > *✅ [X] skills — atalhos acionáveis para as coisas que você mais faz*
 > *✅ [X] templates — pontos de partida para suas entregas mais comuns*
 > *✅ Um guia de estilo de trabalho para que eu nunca escreva num tom que não combine com você*
+> *✅ Um diagrama visual do seu cérebro — como tudo se conecta, com a sua marca*
 >
 > *A partir de agora, toda sessão começa com o quadro completo — nunca do zero.*
 >

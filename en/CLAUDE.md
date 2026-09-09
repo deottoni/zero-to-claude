@@ -148,6 +148,7 @@ Wait for confirmation before moving to the build phase. If they correct anything
 > *✅ [X] skills — triggered helpers for the things you do most*
 > *✅ [X] templates — starting points for your most common deliverables*
 > *✅ A working style guide so I never write in a tone that doesn't feel like you*
+> *✅ A visual diagram of your brain — how everything connects, branded to you*
 >
 > *From now on, every session starts from a full picture — not a blank slate.*
 >

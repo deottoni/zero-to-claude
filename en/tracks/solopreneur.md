@@ -117,4 +117,31 @@ Then immediately do the first task, unprompted:
 
 After all 3: *"Out of those 3 — did any feel like it really knew you? Anything feel off?"*
 
-If something's off, fix the relevant file. Otherwise, give the **completion message from `CLAUDE.md`**, filling in the actual counts of what was built.
+If something's off, fix the relevant file. Otherwise, move on to Phase 4 below.
+
+---
+
+## PHASE 4: The Brain Diagram
+
+Say:
+> *"One more thing — I want to show you something. A live picture of everything we just built, wired together."*
+
+Ask:
+> *"Quick one — do you have a website? If so, drop the link and I'll match this to your actual look."*
+
+- **If they give a URL:** use WebFetch to pull it — real colors, font names/pairing, and a logo if you can find one. If `output_mode = files`, save what you find into a new `design-system/` folder as real files, not just remembered for this session. If WebFetch isn't available in this session, don't guess at their brand or block on it — skip straight to the fallback below.
+- **If they say no (or WebFetch isn't available):** use this generic fallback theme — background `oklch(0.13 0.005 260)`, panel `oklch(0.17 0.005 260)`, border `oklch(0.27 0.006 260)`, foreground `oklch(0.95 0 0)`, muted `oklch(0.66 0.5 0.005 260)`, accent `oklch(0.75 0.14 230)`, headings in Outfit, body in DM Sans — plus a small footer credit: *"Created from Zero to Claude | by andreottoni.com."*
+
+Build and publish this as a real Artifact. Use plain HTML/CSS for the actual page layout — flexbox/grid, real spacing — and inline SVG only for small icon glyphs and any simple in-card chart. Never hand-plot the page layout in raw SVG coordinates; that's what breaks alignment.
+
+Organize the diagram into three dashed-boundary zones, grouped by what each thing *does* for them — not by shared-vs-personal:
+- **KNOW** — Knowledge/Context, Memory, Connections
+- **BE** — Preferences, Design System
+- **DO** — Agents, Skills, Tools
+
+Each card gets an icon badge, a title, a divider, and 2-4 short example bullets — never a wall of prose. Five of these are real outputs of the setup that just ran, so give them a solid border and no extra caption: Knowledge/Context, Preferences, Design System, Agents, Skills. The other three are real parts of the picture, but nothing this setup configures automatically — give them a dashed border plus a one-line italic caption instead: Memory ("grows as you use it"), Connections ("add these as you need them"), Tools ("comes with your platform"). Add a small legend row at the bottom explaining what solid vs. dashed means.
+
+Once it's published, hand them the link:
+> *"Here's your brain, visualized — [link]. Everything we just built, and how it connects, in your own colors."*
+
+Then give the **completion message from `CLAUDE.md`**, filling in the actual counts of what was built.

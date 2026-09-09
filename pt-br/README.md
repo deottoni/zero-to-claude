@@ -11,8 +11,8 @@ Tudo que você precisa está nesta pasta. Não existe um app separado, um painel
 
 Existem duas trilhas:
 
-- **Solopreneur** — você é um profissional independente. Você recebe um perfil pessoal ("cérebro"), agentes e skills construídos em torno do seu trabalho real, e templates para o que você mais produz.
-- **PME** — isto é para um time ou pequena empresa. Você recebe a mesma ideia, com escopo no negócio: um perfil de empresa compartilhado, além de agentes construídos em torno das funções específicas (vendas, operações, marketing, RH, etc.) onde você disse que a IA poderia mais ajudar.
+- **Profissional Autônomo (Solo)** — você é um profissional independente. Você recebe um perfil pessoal ("cérebro"), agentes e skills construídos em torno do seu trabalho real, e templates para o que você mais produz.
+- **Pequena Empresa (PME)** — isto é para um time ou pequena empresa. Você recebe a mesma ideia, com escopo no negócio: um perfil de empresa compartilhado, além de agentes construídos em torno das funções específicas (vendas, operações, marketing, RH, etc.) onde você disse que a IA poderia mais ajudar.
 
 Você não precisa escolher a trilha sozinho(a) — o Claude pergunta no início e conduz o resto a partir daí.
 
@@ -51,7 +51,7 @@ O `index.html` na raiz do repositório (uma pasta acima desta) é uma prévia cu
 | `.claude/agents/` | Agentes gerados — só Claude Code / Cowork |
 | `.claude/skills/` | Skills geradas — só Claude Code / Cowork |
 
-Depois da configuração, você vai ter uma pasta `my-brain/` (solopreneur) ou `company-brain/` (PME) com seus arquivos de perfil. Esse é o seu cérebro de IA — guarde com cuidado e use como seu projeto daqui para frente.
+Depois da configuração, você vai ter uma pasta `my-brain/` (Profissional Autônomo) ou `company-brain/` (Pequena Empresa) com seus arquivos de perfil. Esse é o seu cérebro de IA — guarde com cuidado e use como seu projeto daqui para frente.
 
 ---
 
