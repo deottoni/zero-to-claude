@@ -1,6 +1,6 @@
 # Demo Mode — for Andre only
 
-## Instructions for Claude: you were sent here because the person running this said something like "run the demo." Follow this file, not the normal `CLAUDE.md` flow. Everything below is written for you to execute, not for a human to read and act on step by step — the whole point is that Andre shouldn't have to remember commands, folders, or which file to open.
+## Instructions for Claude: you were sent here because the person running this said something like "run the demo." Follow this file, not the normal `en/CLAUDE.md` flow. Everything below is written for you to execute, not for a human to read and act on step by step — the whole point is that Andre shouldn't have to remember commands, folders, or which file to open. This demo is English-only for now (Andre only), even if the repo also has a `pt-br/` version for real clients.
 
 This is the **real flow**, with a **made-up client** answering, so nothing here is a mockup and nothing here is a real person's data. It exists so Andre can rehearse or present confidently without needing a real client's real answers on the spot, and without having to think about setup mechanics himself.
 
@@ -22,7 +22,7 @@ Run this yourself (you have shell access — just do it, don't ask them to run a
 cp -r [this repo's root folder] ~/Desktop/demo-$(date +%m-%d-%y)
 ```
 
-Then tell them plainly: *"Copied to `~/Desktop/demo-MM-DD-YY` — I'll do everything from there, your real repo is untouched. Safe to delete that whole folder when we're done."* From this point on, treat that copied path as the project root for every file you read or write for the rest of this session — use full paths to it, don't assume your working directory moved. Set `output_mode = files`.
+Then tell them plainly: *"Copied to `~/Desktop/demo-MM-DD-YY` — I'll do everything from there, your real repo is untouched. Safe to delete that whole folder when we're done."* From this point on, treat `~/Desktop/demo-MM-DD-YY/en/` (not the copy's root) as the project root for every file you read or write for the rest of this session — that's where `CLAUDE.md`, `tracks/`, etc. actually live — use full paths to it, don't assume your working directory moved. Set `output_mode = files`.
 
 ### If they want chat-only (no files)
 
@@ -46,18 +46,18 @@ Wait for them to say go.
 
 ## Step 3 — run the real track, feeding yourself the persona's answers
 
-Follow `CLAUDE.md`'s shared spec and `tracks/solopreneur.md` or `tracks/smb.md` **exactly as written**, with two differences from a normal run:
+Follow `en/CLAUDE.md`'s shared spec and `en/tracks/solopreneur.md` or `en/tracks/smb.md` **exactly as written**, with two differences from a normal run:
 
 1. **Don't run Phase 0's question or its self-detection step again.** Track and `output_mode` are already decided from Step 1 above — and Step 1's answer wins even if it disagrees with what your own self-detection would conclude (e.g. they may ask for chat-only even though you technically could write files, precisely so nothing gets saved). Skip straight into the welcome beat and Round 1.
 2. **Don't wait for the human to type or paste an answer to each round.** When the track file says to give a round's prompt, give it out loud as normal (for narration), then immediately answer it yourself using that round's block from the persona file you already read — as if the persona had just said it. **Then pause and wait for the presenter to say "next" or "go" before moving to the following round** — they need room to narrate over the rundown sheet, so don't auto-chain through every round back to back.
 
-Everything else runs for real: file writes (if in files mode), the mandatory confirmation gate, the Phase 3 build with real model tiers, and the Wow Test. Don't script or shortcut the Wow Test — that's the actual product working, and it should run exactly as `tracks/*.md` defines it.
+Everything else runs for real: file writes (if in files mode), the mandatory confirmation gate, the Phase 3 build with real model tiers, and the Wow Test. Don't script or shortcut the Wow Test — that's the actual product working, and it should run exactly as `en/tracks/*.md` defines it.
 
 ---
 
 ## Step 4 — after the Wow Test
 
-Give the normal completion message from `CLAUDE.md`. Then, only if you ran in files mode, remind them once: *"Everything's in `~/Desktop/demo-MM-DD-YY` — delete that folder whenever, your real repo was never touched."*
+Give the normal completion message from `en/CLAUDE.md`. Then, only if you ran in files mode, remind them once: *"Everything's in `~/Desktop/demo-MM-DD-YY` — delete that folder whenever, your real repo was never touched."*
 
 ---
 
