@@ -68,14 +68,14 @@ Write `company-brain/CLAUDE.md` using the **master file spec in `CLAUDE.md`** �
 
 For each of the `priority_functions` identified in Round 4 (2-4 of them), build:
 
-1. **An agent** — a business-function advisor Claude inhabits when working on that function. Name, short description, perspective, standing instructions, a model tier (per the **model layer spec in `CLAUDE.md`**), and — critically — grounded in the *specific bottleneck* they described for that function, not a generic version.
+1. **An agent** — a business-function advisor Claude inhabits when working on that function. **Start from the matching file in `../agents-library/` (see the table below for which one) — copy it, don't generate from scratch.** Then tailor it: fold in the *specific bottleneck* they described for that function, their business's real context, and their team's names if relevant, so the result feels built for them, not copy-pasted. If a function doesn't have a match in the library, generate one from scratch using the same shape (name, short description, perspective, standing instructions, a model tier per the **model layer spec in `CLAUDE.md`**).
 2. **A skill** — a triggered helper for the most recurring task in that function.
 3. **A template** — a starting-point document for that function's most common deliverable.
 
-**Files mode:** write directly — agents → `.claude/agents/[function].md` (with `name`/`description`/`model` frontmatter, per the model layer spec — these become real subagents Claude can delegate to, so a heavier function like finance genuinely runs on a stronger model), skills → `.claude/skills/[function].md`, templates → `templates/[function].md`.
-**Text-blocks mode:** output each as a formatted block to copy into Project Instructions or save separately, plus the one-line manual model-switching note from the model layer spec.
+**Files mode:** write directly — agents → `.claude/agents/[function].md` (starting from `../agents-library/[function].md`, tailored — keep the `name`/`description`/`model` frontmatter shape, per the model layer spec — these become real subagents Claude can delegate to, so a heavier function like finance genuinely runs on a stronger model), skills → `.claude/skills/[function].md`, templates → `templates/[function].md`.
+**Text-blocks mode:** you can still read `../agents-library/` yourself even though you can't write files for them — read the matching file, tailor it the same way, then output the tailored result as a formatted block to copy into Project Instructions, plus the one-line manual model-switching note from the model layer spec.
 
-Use this as a starting point for naming, shape, and model tier — adapt freely to what they actually described, don't force a function into a mold that doesn't fit:
+The table below is both the naming/tier reference and the map to `../agents-library/` — each `Agent` name is that file's filename (e.g. `ceo-advisor` → `../agents-library/ceo-advisor.md`). Adapt freely to what they actually described, don't force a function into a mold that doesn't fit — and if a function genuinely isn't one of these 8, generate it from scratch instead of stretching a mismatched template:
 
 | Function | Agent | Model | Skill trigger | Template |
 |----------|-------|-------|--------------|----------|

@@ -68,14 +68,14 @@ Escreva `company-brain/CLAUDE.md` usando a **especificação do arquivo mestre e
 
 Para cada uma das `priority_functions` identificadas na Rodada 4 (2-4 delas), construa:
 
-1. **Um agente** — um consultor de função de negócio que o Claude assume ao trabalhar naquela função. Nome, descrição curta, perspectiva, instruções permanentes, um nível de modelo (conforme a **especificação da camada de modelo em `CLAUDE.md`**), e — de forma crítica — fundamentado no *gargalo específico* que foi descrito para aquela função, não numa versão genérica.
+1. **Um agente** — um consultor de função de negócio que o Claude assume ao trabalhar naquela função. **Comece pelo arquivo correspondente em `../agents-library/` (veja a tabela abaixo pra saber qual) — copie, não gere do zero.** Depois adapte: incorpore o *gargalo específico* que foi descrito para aquela função, o contexto real do negócio, e os nomes do time se for relevante, pra que o resultado pareça construído pra essa empresa, não copiado e colado. Se uma função não tiver correspondência na biblioteca, gere do zero usando o mesmo formato (nome, descrição curta, perspectiva, instruções permanentes, um nível de modelo conforme a **especificação da camada de modelo em `CLAUDE.md`**).
 2. **Uma skill** — um atalho acionável para a tarefa mais recorrente daquela função.
 3. **Um template** — um documento de ponto de partida para a entrega mais comum daquela função.
 
-**Modo files:** escreva diretamente — agentes → `.claude/agents/[função].md` (com frontmatter `name`/`description`/`model`, conforme a especificação da camada de modelo — esses se tornam subagentes reais que o Claude pode delegar, então uma função mais pesada como financeiro realmente roda num modelo mais forte), skills → `.claude/skills/[função].md`, templates → `templates/[função].md`.
-**Modo text-blocks:** apresente cada um como um bloco formatado para copiar nas Instruções do Projeto ou salvar separadamente, mais a nota manual de uma linha sobre troca de modelo da especificação da camada de modelo.
+**Modo files:** escreva diretamente — agentes → `.claude/agents/[função].md` (partindo de `../agents-library/[função].md`, adaptado — mantenha o formato de frontmatter `name`/`description`/`model`, conforme a especificação da camada de modelo — esses se tornam subagentes reais que o Claude pode delegar, então uma função mais pesada como financeiro realmente roda num modelo mais forte), skills → `.claude/skills/[função].md`, templates → `templates/[função].md`.
+**Modo text-blocks:** você ainda consegue ler `../agents-library/` sozinho, mesmo sem conseguir escrever arquivos para a pessoa — leia o arquivo correspondente, adapte da mesma forma, depois apresente o resultado adaptado como um bloco formatado para copiar nas Instruções do Projeto, mais a nota manual de uma linha sobre troca de modelo da especificação da camada de modelo.
 
-Use isto como ponto de partida para nome, formato e nível de modelo — adapte livremente ao que realmente foi descrito, não force uma função a caber num molde que não combina:
+A tabela abaixo é tanto a referência de nome/nível quanto o mapa para `../agents-library/` — cada nome em `Agente` é o nome do arquivo (ex.: `ceo-advisor` → `../agents-library/ceo-advisor.md`). Adapte livremente ao que realmente foi descrito, não force uma função a caber num molde que não combina — e se uma função genuinamente não for uma dessas 8, gere do zero em vez de forçar um template que não combina:
 
 | Função | Agente | Modelo | Gatilho da Skill | Template |
 |----------|-------|-------|--------------|----------|
