@@ -120,7 +120,7 @@
     <div class="container header-inner">
       <div class="logo"><span class="logo-dot"></span> Zero to Claude</div>
       <div class="header-actions">
-        <a class="btn-download" href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>⬇<span class="btn-download-label"> Download ZIP</span></a>
+        <a class="btn-download" href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>⬇<span class="btn-download-label" id="header-dl-label"> Download ZIP</span></a>
         <div class="lang-toggle" role="group" aria-label="Language / Idioma">
           <button id="btn-en" aria-pressed="true" onclick="setLang('en')" title="English">🇺🇸</button>
           <button id="btn-pt" aria-pressed="false" onclick="setLang('pt')" title="Português">🇧🇷</button>
@@ -227,6 +227,7 @@
       document.getElementById('btn-en').setAttribute('aria-pressed', String(isEn));
       document.getElementById('btn-pt').setAttribute('aria-pressed', String(!isEn));
       document.documentElement.lang = isEn ? 'en' : 'pt-BR';
+      document.getElementById('header-dl-label').textContent = isEn ? ' Download ZIP' : ' Baixar ZIP';
       try { localStorage.setItem('ztc-lang', lang); } catch (e) {}
     }
 
