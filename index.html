@@ -80,46 +80,35 @@
     section h2 { font-size: 1.3rem; margin-bottom: 0.4rem; }
     section .section-sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.5rem; max-width: 56ch; }
 
-    .steps { display: flex; flex-direction: column; gap: 1rem; }
-    .step { display: flex; gap: 1rem; align-items: flex-start; }
-    .step-num {
-      flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%;
-      background: var(--card); border: 1px solid var(--border);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.85rem; color: var(--accent); font-weight: 600;
-    }
-    .step p { color: var(--muted); font-size: 0.95rem; }
-    .step strong { color: var(--fg); }
-    .step p a, .note a.inline { color: var(--accent); }
-    code { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 0.1rem 0.4rem; font-size: 0.85em; }
-
-    .note {
+    .get-started {
+      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
       background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1rem 1.25rem; color: var(--muted); font-size: 0.9rem; margin-top: 1.5rem;
+      padding: 1.25rem 1.5rem; margin: 2rem 0;
     }
+    .get-started p { font-size: 0.95rem; color: var(--muted); max-width: 46ch; }
+    .get-started p strong { color: var(--fg); }
+    .get-started .btn-download { flex-shrink: 0; }
+
+    section > p.lead { color: var(--muted); font-size: 0.98rem; max-width: 62ch; margin-bottom: 1rem; }
+    section > p.lead:last-of-type { margin-bottom: 1.75rem; }
 
     .round-group-label {
       font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted);
-      margin: 1.5rem 0 0.75rem;
+      margin: 0.5rem 0 0.9rem;
     }
-    .round-group-label:first-child { margin-top: 0; }
 
-    .prompt-card {
+    .highlights { list-style: none; display: flex; flex-direction: column; gap: 0.7rem; }
+    .highlights li {
+      position: relative; padding-left: 1.2rem; color: var(--muted); font-size: 0.95rem;
+    }
+    .highlights li::before {
+      content: ''; position: absolute; left: 0; top: 0.55em; width: 6px; height: 6px;
+      border-radius: 50%; background: var(--accent);
+    }
+
+    .note {
       background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1.1rem 1.25rem; margin-bottom: 0.85rem;
-    }
-    .prompt-card-head { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 0.6rem; }
-    .prompt-card-head h4 { font-size: 0.95rem; }
-    .copy-btn {
-      flex-shrink: 0; font-family: var(--font); font-size: 0.8rem; font-weight: 500;
-      background: var(--card-2); border: 1px solid var(--border); color: var(--fg);
-      border-radius: 999px; padding: 0.35rem 0.85rem; cursor: pointer;
-    }
-    .copy-btn:hover { background: var(--border); }
-    .copy-btn.copied { background: var(--success); border-color: var(--success); color: oklch(0.145 0 0); }
-    .prompt-text {
-      font-family: var(--font-mono); font-size: 0.82rem; color: var(--muted);
-      white-space: pre-wrap; line-height: 1.55; margin: 0;
+      padding: 1rem 1.25rem; color: var(--muted); font-size: 0.9rem; margin-top: 1.75rem;
     }
 
     footer.page-foot { padding: 3rem 0; text-align: center; color: var(--muted); font-size: 0.85rem; }
@@ -161,99 +150,25 @@
       </div>
     </div>
 
-    <section>
-      <h2>How it works</h2>
-      <p class="section-sub">The full flow, start to finish — Claude carries every step of this in conversation.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <p><strong>Get the folder.</strong> <a href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>Download it as a ZIP</a> — no git needed — or clone the repo if you prefer.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <p><strong>Open the <code>en/</code> folder in Claude.</strong> Claude Code, Cowork, or a new claude.ai Project — <code>en/CLAUDE.md</code> works the same way in each.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <p><strong>Answer one quick question.</strong> Solo, or a team with other people involved?</p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <p><strong>Work through a few short rounds.</strong> Claude gives you one prompt at a time — preview them below. Already have history with ChatGPT or Gemini? Copy a prompt there first and bring back what it says.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <p><strong>Confirm your "brain."</strong> Claude shows you a plain-language summary of everything it just learned before writing anything for real.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">6</div>
-          <p><strong>Claude builds your workspace.</strong> Agents, skills, and templates matched to your actual work — not generic tools.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">7</div>
-          <p><strong>The wow test.</strong> Claude proves it live — a real message in your voice, a real agent, a real skill — before you even ask.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">8</div>
-          <p><strong>See your brain, visualized.</strong> A diagram of how everything connects — branded to you if you have a website, otherwise a clean default look.</p>
-        </div>
-      </div>
-      <div class="note">This page is just a preview. Claude tracks your progress in the conversation itself — there's nothing to check off here. Prefer Portuguese? This repo also has a full <code>pt-br/</code> version — toggle 🇧🇷 above, or see the root <code>README.md</code>.</div>
-    </section>
+    <div class="get-started">
+      <p><strong>Get started.</strong> Download the folder, open it in Claude, and say hi — it takes it from there. No setup, nothing to prepare first.</p>
+      <a class="btn-download" href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>⬇ Download ZIP</a>
+    </div>
 
     <section>
-      <h2>Preview the rounds</h2>
-      <p class="section-sub">Exactly what Claude asks — word for word. Copy any of these into another AI tool if you'd rather prep your answer there first.</p>
-
-      <div class="round-group-label">Both tracks</div>
-      <div class="prompt-card">
-        <div class="prompt-card-head"><h4>Round 1 — You &amp; your work</h4><button class="copy-btn" onclick="copyPrompt('p-en-1', this)">Copy</button></div>
-        <pre class="prompt-text" id="p-en-1">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
-
-1. Who am I professionally — name, role, and whether I'm employed, freelance, or running my own business?
-2. What do I actually do, in my own words — the work itself, and who I do it for or with?
-3. What have I said makes me different or strongest at what I do?
-4. What are my main goals right now — what am I trying to make happen in the next year or so, and what does success look like?</pre>
-      </div>
-      <div class="prompt-card">
-        <div class="prompt-card-head"><h4>Round 2 — How you work</h4><button class="copy-btn" onclick="copyPrompt('p-en-2', this)">Copy</button></div>
-        <pre class="prompt-text" id="p-en-2">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
-
-1. How do I like responses formatted and toned — short or detailed, casual or formal, bullet points or paragraphs?
-2. What's my natural writing voice like when I write emails, posts, or messages?
-3. What have I explicitly told an AI not to do — any "stop doing X" or "never do Y" corrections, or feedback that a response was too long, wrong tone, or over-explained?
-4. Are there specific words, phrases, or formats I've asked you to avoid?</pre>
-      </div>
-      <div class="prompt-card">
-        <div class="prompt-card-head"><h4>Round 3 — Recurring work &amp; projects</h4><button class="copy-btn" onclick="copyPrompt('p-en-3', this)">Copy</button></div>
-        <pre class="prompt-text" id="p-en-3">Answer the following about me based on everything you know from our conversations. Be specific — real details only.
-
-1. What are the main types of work I do regularly? List each one separately.
-2. For each — what does it involve from start to finish, and are there templates, frameworks, or processes I already use?
-3. What projects am I currently working on — specific ongoing initiatives, not just recurring tasks?
-
-Structure your answer like this:
-
-RECURRING TASKS:
-- [Task name]: [What it involves, how I approach it, any tools or templates I use]
-
-CURRENT PROJECTS:
-- [Project name]: [What it is, where it stands, what the goal is]
-
-TOOLS & DOCUMENTS:
-- [Tool or doc]: [What I use it for]</pre>
-      </div>
-
-      <div class="round-group-label">SMB only</div>
-      <div class="prompt-card">
-        <div class="prompt-card-head"><h4>Round 4 — Team &amp; functions</h4><button class="copy-btn" onclick="copyPrompt('p-en-4', this)">Copy</button></div>
-        <pre class="prompt-text" id="p-en-4">This one is about the business as a whole, not just me. Answer based on everything you know — be specific, real details only.
-
-1. Who's on the team, roughly? Names/roles are enough — I don't need an org chart.
-2. Who makes which decisions — is it centralized (mostly me/one person) or spread across the team?
-3. Which functions in the business could most use AI help right now — pick 2-4: sales, marketing, ops, HR, finance, customer support, data/reporting, something else?
-4. For each function you picked — what's the actual bottleneck or pain point today?</pre>
-      </div>
+      <h2>What this is</h2>
+      <p class="section-sub">Background reading, not a checklist — Claude runs the actual conversation start to finish, nothing here is required.</p>
+      <p class="lead">Zero to Claude is a short guided conversation, not a form. Once you're in the chat, Claude reads its own instructions and asks a handful of real questions about you — or your business — until it actually has the full picture. No prompts to copy, nothing to fill out here first.</p>
+      <p class="lead">Most AI conversations start from zero — you re-explain who you are and how you work, every single time. This sets that foundation once: a real profile, agents and skills matched to your actual work, and a live moment where Claude proves it already gets you.</p>
+      <div class="round-group-label">Roughly what to expect</div>
+      <ul class="highlights">
+        <li>A few real questions about you or your team — conversational, not a survey.</li>
+        <li>A plain-language summary to confirm before Claude writes anything for real.</li>
+        <li>Your workspace built — agents, skills, and templates matched to how you actually work.</li>
+        <li>A live proof moment — a real message in your voice, a real agent, a real skill.</li>
+        <li>A diagram of it all, branded to you if you have a website.</li>
+      </ul>
+      <div class="note">Prefer Portuguese? Toggle 🇧🇷 above.</div>
     </section>
 
     <footer class="page-foot">
@@ -282,99 +197,25 @@ TOOLS & DOCUMENTS:
       </div>
     </div>
 
-    <section>
-      <h2>Como funciona</h2>
-      <p class="section-sub">O fluxo completo, do início ao fim — o Claude conduz cada etapa disso na conversa.</p>
-      <div class="steps">
-        <div class="step">
-          <div class="step-num">1</div>
-          <p><strong>Pegue a pasta.</strong> <a href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>Baixe como um ZIP</a> — sem precisar de git — ou clone o repositório se preferir.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <p><strong>Abra a pasta <code>pt-br/</code> no Claude.</strong> Claude Code, Cowork, ou um novo Projeto no claude.ai — o <code>pt-br/CLAUDE.md</code> funciona da mesma forma em todos.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <p><strong>Responda uma pergunta rápida.</strong> Sozinho(a), ou um time com outras pessoas envolvidas?</p>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <p><strong>Passe por algumas rodadas curtas.</strong> O Claude te dá um roteiro de cada vez — veja a prévia abaixo. Já tem histórico com ChatGPT ou Gemini? Cole o roteiro lá primeiro e traga de volta o que disser.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">5</div>
-          <p><strong>Confirme seu "cérebro".</strong> O Claude mostra um resumo em linguagem simples de tudo que acabou de aprender antes de escrever qualquer coisa de verdade.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">6</div>
-          <p><strong>O Claude constrói seu espaço de trabalho.</strong> Agentes, skills e templates combinando com seu trabalho real — não ferramentas genéricas.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">7</div>
-          <p><strong>O teste de impacto.</strong> O Claude prova ao vivo — uma mensagem real na sua voz, um agente real, uma skill real — antes mesmo de você pedir.</p>
-        </div>
-        <div class="step">
-          <div class="step-num">8</div>
-          <p><strong>Veja seu cérebro, visualizado.</strong> Um diagrama de como tudo se conecta — com a sua marca se você tiver um site, ou um visual padrão bem cuidado se não tiver.</p>
-        </div>
-      </div>
-      <div class="note">Esta página é só uma prévia. O Claude acompanha seu progresso na própria conversa — não há nada para marcar aqui. Prefere inglês? Este repositório também tem uma versão completa em <code>en/</code> — alterne para 🇺🇸 acima, ou veja o <code>README.md</code> na raiz.</div>
-    </section>
+    <div class="get-started">
+      <p><strong>Comece por aqui.</strong> Baixe a pasta, abra no Claude e dê um oi — ele conduz o resto. Sem preparação, sem nada para organizar antes.</p>
+      <a class="btn-download" href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>⬇ Baixar ZIP</a>
+    </div>
 
     <section>
-      <h2>Prévia das rodadas</h2>
-      <p class="section-sub">Exatamente o que o Claude pergunta — palavra por palavra. Copie qualquer uma delas para outra ferramenta de IA se preferir preparar sua resposta lá primeiro.</p>
-
-      <div class="round-group-label">Nas duas trilhas</div>
-      <div class="prompt-card">
-        <div class="prompt-card-head"><h4>Rodada 1 — Você &amp; seu trabalho</h4><button class="copy-btn" onclick="copyPrompt('p-pt-1', this)">Copiar</button></div>
-        <pre class="prompt-text" id="p-pt-1">Responda o seguinte sobre mim com base em tudo que você sabe das nossas conversas. Seja específico — apenas detalhes reais.
-
-1. Quem eu sou profissionalmente — nome, cargo, e se sou empregado(a), autônomo(a), ou dono(a) do meu próprio negócio?
-2. O que eu realmente faço, com minhas próprias palavras — o trabalho em si, e para quem ou com quem eu faço isso?
-3. O que eu já disse que me torna diferente ou mais forte no que faço?
-4. Quais são meus principais objetivos agora — o que estou tentando realizar no próximo ano ou por aí, e como é o sucesso?</pre>
-      </div>
-      <div class="prompt-card">
-        <div class="prompt-card-head"><h4>Rodada 2 — Como você trabalha</h4><button class="copy-btn" onclick="copyPrompt('p-pt-2', this)">Copiar</button></div>
-        <pre class="prompt-text" id="p-pt-2">Responda o seguinte sobre mim com base em tudo que você sabe das nossas conversas. Seja específico — apenas detalhes reais.
-
-1. Como eu gosto que as respostas sejam formatadas e o tom usado — curtas ou detalhadas, casuais ou formais, bullet points ou parágrafos?
-2. Como é minha voz natural de escrita quando escrevo e-mails, posts ou mensagens?
-3. O que eu já disse explicitamente para uma IA não fazer — algum "pare de fazer X" ou "nunca faça Y", ou feedback de que uma resposta foi longa demais, com tom errado, ou explicada demais?
-4. Existem palavras, frases ou formatos específicos que eu já pedi para evitar?</pre>
-      </div>
-      <div class="prompt-card">
-        <div class="prompt-card-head"><h4>Rodada 3 — Trabalho recorrente &amp; projetos</h4><button class="copy-btn" onclick="copyPrompt('p-pt-3', this)">Copiar</button></div>
-        <pre class="prompt-text" id="p-pt-3">Responda o seguinte sobre mim com base em tudo que você sabe das nossas conversas. Seja específico — apenas detalhes reais.
-
-1. Quais são os principais tipos de trabalho que eu faço regularmente? Liste cada um separadamente.
-2. Para cada um — o que ele envolve do início ao fim, e existem templates, frameworks ou processos que eu já uso?
-3. Em quais projetos eu estou trabalhando atualmente — iniciativas específicas em andamento, não só tarefas recorrentes?
-
-Estruture sua resposta assim:
-
-TAREFAS RECORRENTES:
-- [Nome da tarefa]: [O que envolve, como eu abordo isso, quais ferramentas ou templates eu uso]
-
-PROJETOS ATUAIS:
-- [Nome do projeto]: [O que é, em que ponto está, qual é o objetivo]
-
-FERRAMENTAS &amp; DOCUMENTOS:
-- [Ferramenta ou documento]: [Para que eu uso isso]</pre>
-      </div>
-
-      <div class="round-group-label">Só na trilha PME</div>
-      <div class="prompt-card">
-        <div class="prompt-card-head"><h4>Rodada 4 — Time &amp; funções</h4><button class="copy-btn" onclick="copyPrompt('p-pt-4', this)">Copiar</button></div>
-        <pre class="prompt-text" id="p-pt-4">Esta é sobre o negócio como um todo, não só sobre mim. Responda com base em tudo que você sabe — seja específico, apenas detalhes reais.
-
-1. Quem está no time, a grosso modo? Nomes/cargos já bastam — não preciso de um organograma.
-2. Quem toma quais decisões — é centralizado (principalmente eu/uma pessoa) ou distribuído entre o time?
-3. Quais funções do negócio poderiam mais se beneficiar de ajuda de IA agora — escolha 2-4: vendas, marketing, operações, RH, financeiro, atendimento ao cliente, dados/relatórios, outra coisa?
-4. Para cada função que você escolheu — qual é o gargalo ou ponto de dor real hoje?</pre>
-      </div>
+      <h2>O que é isso</h2>
+      <p class="section-sub">Leitura de contexto, não um checklist — o Claude conduz a conversa de verdade do início ao fim, nada aqui é obrigatório.</p>
+      <p class="lead">Zero to Claude é uma conversa guiada curta, não um formulário. Assim que você entra no chat, o Claude lê as próprias instruções e faz algumas perguntas reais sobre você — ou seu negócio — até ter o quadro completo. Sem copiar roteiro, sem preencher nada aqui antes.</p>
+      <p class="lead">A maioria das conversas com IA começa do zero — você reexplica quem é e como trabalha toda vez. Isso resolve essa base de uma vez: um perfil real, agentes e skills combinando com seu trabalho de verdade, e um momento ao vivo em que o Claude prova que já te conhece.</p>
+      <div class="round-group-label">Mais ou menos o que esperar</div>
+      <ul class="highlights">
+        <li>Algumas perguntas reais sobre você ou seu time — no formato de conversa, não de formulário.</li>
+        <li>Um resumo em linguagem simples para você confirmar antes do Claude escrever qualquer coisa de verdade.</li>
+        <li>Seu espaço de trabalho construído — agentes, skills e templates combinando com seu trabalho real.</li>
+        <li>Uma prova ao vivo — uma mensagem real na sua voz, um agente real, uma skill real.</li>
+        <li>Um diagrama de tudo isso, com a sua marca se você tiver um site.</li>
+      </ul>
+      <div class="note">Prefere inglês? Alterne para 🇺🇸 acima.</div>
     </section>
 
     <footer class="page-foot">
@@ -391,33 +232,6 @@ FERRAMENTAS &amp; DOCUMENTOS:
       document.getElementById('btn-pt').setAttribute('aria-pressed', String(!isEn));
       document.documentElement.lang = isEn ? 'en' : 'pt-BR';
       try { localStorage.setItem('ztc-lang', lang); } catch (e) {}
-    }
-
-    function copyPrompt(id, btn) {
-      const text = document.getElementById(id).textContent;
-      const label = btn.textContent;
-      const done = () => {
-        btn.textContent = label.startsWith('Cop') && label.includes('ar') ? 'Copiado!' : 'Copied!';
-        btn.classList.add('copied');
-        setTimeout(() => { btn.textContent = label; btn.classList.remove('copied'); }, 1600);
-      };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done).catch(() => fallbackCopy(text, done));
-      } else {
-        fallbackCopy(text, done);
-      }
-    }
-
-    function fallbackCopy(text, done) {
-      const ta = document.createElement('textarea');
-      ta.value = text;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.focus();
-      ta.select();
-      try { document.execCommand('copy'); done(); } catch (e) {}
-      document.body.removeChild(ta);
     }
 
     (function init() {
