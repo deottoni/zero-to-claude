@@ -77,17 +77,22 @@
     .track-card p { color: var(--muted); font-size: 0.92rem; }
 
     section { padding: 2.5rem 0; border-top: 1px solid var(--border); }
-    section h2 { font-size: 1.3rem; margin-bottom: 0.4rem; }
-    section .section-sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 1.5rem; max-width: 56ch; }
+    section h2 { font-size: 1.3rem; margin-bottom: 1.25rem; }
 
     .get-started {
-      display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap;
-      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
-      padding: 1.25rem 1.5rem; margin: 2rem 0;
+      display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1.1rem;
+      background: var(--accent-soft); border: 1px solid var(--accent); border-radius: var(--radius);
+      padding: 2.5rem 1.5rem; margin: 2.5rem 0;
     }
-    .get-started p { font-size: 0.95rem; color: var(--muted); max-width: 46ch; }
-    .get-started p strong { color: var(--fg); }
-    .get-started .btn-download { flex-shrink: 0; }
+    .get-started .eyebrow {
+      font-size: 0.78rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent);
+    }
+    .get-started .line { font-size: 1.2rem; font-weight: 500; color: var(--fg); max-width: 32ch; line-height: 1.45; }
+    .get-started .btn-download.btn-lg {
+      font-size: 1rem; font-weight: 600; padding: 0.8rem 1.9rem;
+      background: var(--accent); color: var(--fg); border-color: var(--accent);
+    }
+    .get-started .btn-download.btn-lg:hover { filter: brightness(1.12); }
 
     section > p.lead { color: var(--muted); font-size: 0.98rem; max-width: 62ch; margin-bottom: 1rem; }
     section > p.lead:last-of-type { margin-bottom: 1.75rem; }
@@ -146,22 +151,21 @@
     </div>
 
     <div class="get-started">
-      <p><strong>Get started.</strong> Download the folder, open it in Claude, and say hi — it takes it from there. No setup, nothing to prepare first.</p>
-      <a class="btn-download" href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>⬇ Download ZIP</a>
+      <span class="eyebrow">Get started</span>
+      <p class="line">Download it, open it in Claude, and say hi. That's all it takes.</p>
+      <a class="btn-download btn-lg" href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>⬇ Download ZIP</a>
     </div>
 
     <section>
       <h2>What this is</h2>
-      <p class="section-sub">Background reading, not a checklist — Claude runs the actual conversation start to finish, nothing here is required.</p>
-      <p class="lead">Zero to Claude is a short guided conversation, not a form. Once you're in the chat, Claude reads its own instructions and asks a handful of real questions about you — or your business — until it actually has the full picture.</p>
-      <p class="lead">Most AI conversations start from zero — you re-explain who you are and how you work, every single time. This sets that foundation once: a real profile, agents and skills matched to your actual work, and a live moment where Claude proves it already gets you.</p>
-      <div class="round-group-label">Roughly what to expect</div>
+      <p class="lead">Zero to Claude is a one-time setup conversation, fully contained inside Claude — no forms, no separate app. You talk, Claude asks what it actually needs to know, and by the end you have a real working setup: a profile, agents, and skills built around how you actually work.</p>
+      <p class="lead">If you've spent months on ChatGPT, Gemini, or any AI chat re-explaining who you are — or feel stuck copy-pasting context between tools that never quite remember you — this is built for exactly that.</p>
+      <div class="round-group-label">What you walk away with</div>
       <ul class="highlights">
-        <li>A few real questions about you or your team — conversational, not a survey.</li>
-        <li>A plain-language summary to confirm before Claude writes anything for real.</li>
-        <li>Your workspace built — agents, skills, and templates matched to how you actually work.</li>
-        <li>A live proof moment — a real message in your voice, a real agent, a real skill.</li>
-        <li>A diagram of it all, branded to you if you have a website.</li>
+        <li>A real profile — built from an actual conversation, not a form.</li>
+        <li>Agents and skills matched to how you actually work.</li>
+        <li>Live proof it works — a real message in your voice, before you even ask.</li>
+        <li>A visual map of your new setup, branded to you if you have a website.</li>
       </ul>
     </section>
 
@@ -192,22 +196,21 @@
     </div>
 
     <div class="get-started">
-      <p><strong>Comece por aqui.</strong> Baixe a pasta, abra no Claude e dê um oi — ele conduz o resto. Sem preparação, sem nada para organizar antes.</p>
-      <a class="btn-download" href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>⬇ Baixar ZIP</a>
+      <span class="eyebrow">Comece por aqui</span>
+      <p class="line">Baixe, abra no Claude e dê um oi. É só isso.</p>
+      <a class="btn-download btn-lg" href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>⬇ Baixar ZIP</a>
     </div>
 
     <section>
       <h2>O que é isso</h2>
-      <p class="section-sub">Leitura de contexto, não um checklist — o Claude conduz a conversa de verdade do início ao fim, nada aqui é obrigatório.</p>
-      <p class="lead">Zero to Claude é uma conversa guiada curta, não um formulário. Assim que você entra no chat, o Claude lê as próprias instruções e faz algumas perguntas reais sobre você — ou seu negócio — até ter o quadro completo.</p>
-      <p class="lead">A maioria das conversas com IA começa do zero — você reexplica quem é e como trabalha toda vez. Isso resolve essa base de uma vez: um perfil real, agentes e skills combinando com seu trabalho de verdade, e um momento ao vivo em que o Claude prova que já te conhece.</p>
-      <div class="round-group-label">Mais ou menos o que esperar</div>
+      <p class="lead">Zero to Claude é uma configuração única, totalmente dentro do Claude — sem formulário, sem outro app. Você conversa, o Claude pergunta o que realmente precisa saber, e no final você tem uma configuração real funcionando: um perfil, agentes e skills construídos em torno do seu trabalho de verdade.</p>
+      <p class="lead">Se você já passou meses no ChatGPT, Gemini ou qualquer chat de IA reexplicando quem você é — ou sente que fica copiando e colando contexto entre ferramentas que nunca lembram de você — isso foi feito exatamente para isso.</p>
+      <div class="round-group-label">O que você leva com você</div>
       <ul class="highlights">
-        <li>Algumas perguntas reais sobre você ou seu time — no formato de conversa, não de formulário.</li>
-        <li>Um resumo em linguagem simples para você confirmar antes do Claude escrever qualquer coisa de verdade.</li>
-        <li>Seu espaço de trabalho construído — agentes, skills e templates combinando com seu trabalho real.</li>
-        <li>Uma prova ao vivo — uma mensagem real na sua voz, um agente real, uma skill real.</li>
-        <li>Um diagrama de tudo isso, com a sua marca se você tiver um site.</li>
+        <li>Um perfil real — construído a partir de uma conversa de verdade, não de um formulário.</li>
+        <li>Agentes e skills combinando com seu trabalho real.</li>
+        <li>Prova ao vivo de que funciona — uma mensagem real na sua voz, antes mesmo de você pedir.</li>
+        <li>Um mapa visual da sua nova configuração, com a sua marca se você tiver um site.</li>
       </ul>
     </section>
 
