@@ -39,7 +39,8 @@
       border-bottom: 1px solid var(--border);
       padding: 1.25rem 0;
     }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; }
+    .header-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; row-gap: 0.5rem; }
+    @media (max-width: 480px) { .btn-download span.btn-download-label { display: none; } }
     .logo { display: flex; align-items: center; gap: 0.6rem; font-weight: 600; }
     .logo-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); }
     header a { color: var(--muted); text-decoration: none; font-size: 0.9rem; }
@@ -51,6 +52,15 @@
       padding: 0.3rem 0.55rem; border-radius: 999px; line-height: 1; opacity: 0.5;
     }
     .lang-toggle button[aria-pressed="true"] { background: var(--border); opacity: 1; }
+
+    .header-actions { display: flex; align-items: center; gap: 0.75rem; }
+    .btn-download {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      font-family: var(--font); font-size: 0.85rem; font-weight: 500;
+      background: var(--accent-soft); border: 1px solid var(--accent); color: var(--fg);
+      border-radius: 999px; padding: 0.4rem 0.9rem; text-decoration: none; white-space: nowrap;
+    }
+    .btn-download:hover { background: var(--accent); }
 
     .hero { padding: 4.5rem 0 3rem; text-align: center; }
     .hero h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.02em; line-height: 1.15; text-wrap: balance; }
@@ -80,6 +90,7 @@
     }
     .step p { color: var(--muted); font-size: 0.95rem; }
     .step strong { color: var(--fg); }
+    .step p a, .note a.inline { color: var(--accent); }
     code { background: var(--card); border: 1px solid var(--border); border-radius: 4px; padding: 0.1rem 0.4rem; font-size: 0.85em; }
 
     .note {
@@ -119,9 +130,12 @@
   <header>
     <div class="container header-inner">
       <div class="logo"><span class="logo-dot"></span> Zero to Claude</div>
-      <div class="lang-toggle" role="group" aria-label="Language / Idioma">
-        <button id="btn-en" aria-pressed="true" onclick="setLang('en')" title="English">🇺🇸</button>
-        <button id="btn-pt" aria-pressed="false" onclick="setLang('pt')" title="Português">🇧🇷</button>
+      <div class="header-actions">
+        <a class="btn-download" href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>⬇<span class="btn-download-label"> Download ZIP</span></a>
+        <div class="lang-toggle" role="group" aria-label="Language / Idioma">
+          <button id="btn-en" aria-pressed="true" onclick="setLang('en')" title="English">🇺🇸</button>
+          <button id="btn-pt" aria-pressed="false" onclick="setLang('pt')" title="Português">🇧🇷</button>
+        </div>
       </div>
     </div>
   </header>
@@ -153,7 +167,7 @@
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <p><strong>Get the folder.</strong> Clone this repo or download it as a ZIP.</p>
+          <p><strong>Get the folder.</strong> <a href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>Download it as a ZIP</a> — no git needed — or clone the repo if you prefer.</p>
         </div>
         <div class="step">
           <div class="step-num">2</div>
@@ -274,7 +288,7 @@ TOOLS & DOCUMENTS:
       <div class="steps">
         <div class="step">
           <div class="step-num">1</div>
-          <p><strong>Pegue a pasta.</strong> Clone este repositório ou baixe como um ZIP.</p>
+          <p><strong>Pegue a pasta.</strong> <a href="https://github.com/deottoni/zero-to-claude/archive/refs/heads/main.zip" download>Baixe como um ZIP</a> — sem precisar de git — ou clone o repositório se preferir.</p>
         </div>
         <div class="step">
           <div class="step-num">2</div>
